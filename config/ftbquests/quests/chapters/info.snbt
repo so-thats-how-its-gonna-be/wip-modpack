@@ -1,0 +1,18 @@
+{
+	id: "4C93A87F23FFA748"
+	group: ""
+	order_index: 0
+	filename: "info"
+	title: "Info"
+	icon: {
+		id: "ftbquests:custom_icon"
+		Count: 1b
+		tag: {
+			Icon: "ftblibrary:textures/icons/info.png"
+		}
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [ ]
+	quest_links: [ ]
+}

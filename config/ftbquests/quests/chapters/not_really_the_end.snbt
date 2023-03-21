@@ -1,0 +1,27 @@
+{
+	id: "76AE11C79E009C99"
+	group: "4C4EA1E10152AFD7"
+	order_index: 2
+	filename: "not_really_the_end"
+	title: "Not Really The End"
+	icon: "minecraft:end_stone"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		x: -1.0d
+		y: 0.0d
+		shape: "octagon"
+		dependencies: [
+			"14C87CC37DEAB45F"
+			"77DC72A73D8A95A9"
+		]
+		size: 1.5d
+		id: "59A7FE2C4408DDB0"
+		tasks: [{
+			id: "229FA2FF9D66F98B"
+			type: "custom"
+			icon: "minecraft:end_stone"
+		}]
+	}]
+	quest_links: [ ]
+}

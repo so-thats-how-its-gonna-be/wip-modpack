@@ -1,0 +1,347 @@
+{
+	id: "6722DCB4FEC3282B"
+	group: "4C4EA1E10152AFD7"
+	order_index: 0
+	filename: "minecraft_the_world_and_you"
+	title: "Dirt-land"
+	icon: "minecraft:grass_block"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "My Hands Hurt!"
+			x: 0.0d
+			y: 0.0d
+			shape: "octagon"
+			subtitle: "Get any log."
+			description: ["Get wood using your knuckles, probably breaking something in the process!"]
+			size: 1.5d
+			id: "62D2C5D8DC129D5B"
+			tasks: [{
+				id: "48A905E07D3F706C"
+				type: "item"
+				title: "Any #minecraft:logs"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+			}]
+		}
+		{
+			x: 1.5d
+			y: 0.0d
+			dependencies: ["62D2C5D8DC129D5B"]
+			hide: false
+			id: "6FB7E80B351342B2"
+			tasks: [{
+				id: "48FDFC3536942DFF"
+				type: "item"
+				item: "minecraft:crafting_table"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 0.0d
+			dependencies: ["631B124A76E9A865"]
+			id: "5C3C5EB013CAAE85"
+			tasks: [{
+				id: "292C95957054BACF"
+				type: "item"
+				title: "Any #forge:cobblestone"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:cobblestone"
+					}
+				}
+			}]
+		}
+		{
+			x: 2.5d
+			y: 0.0d
+			dependencies: ["6FB7E80B351342B2"]
+			id: "631B124A76E9A865"
+			tasks: [{
+				id: "5920B7B2C5E1D812"
+				type: "item"
+				item: {
+					id: "minecraft:wooden_pickaxe"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 1.5d
+			y: 2.0d
+			dependencies: ["6FB7E80B351342B2"]
+			id: "32C3815122593244"
+			tasks: [{
+				id: "4DD79E906206439B"
+				type: "item"
+				item: {
+					id: "minecraft:wooden_sword"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 4.5d
+			y: 0.0d
+			dependencies: ["5C3C5EB013CAAE85"]
+			id: "5F4A7BB46475387E"
+			tasks: [{
+				id: "4EC45E23F80B25E3"
+				type: "item"
+				item: {
+					id: "minecraft:stone_pickaxe"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 5.5d
+			y: 0.0d
+			dependencies: ["5F4A7BB46475387E"]
+			id: "68573994197909CE"
+			tasks: [{
+				id: "47DE75A5DA31707D"
+				type: "item"
+				item: "minecraft:iron_ingot"
+			}]
+		}
+		{
+			x: 6.5d
+			y: 0.0d
+			dependencies: ["68573994197909CE"]
+			id: "13CD11BC46BAE653"
+			tasks: [{
+				id: "23C292A5628EB6CA"
+				type: "item"
+				item: {
+					id: "minecraft:iron_pickaxe"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 3.5d
+			y: 2.0d
+			dependencies: [
+				"32C3815122593244"
+				"5C3C5EB013CAAE85"
+			]
+			dependency_requirement: "one_completed"
+			id: "4BF67E397CDCCF83"
+			tasks: [{
+				id: "06C372F5DF2AE0DE"
+				type: "item"
+				item: {
+					id: "minecraft:stone_sword"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 5.5d
+			y: 2.0d
+			dependencies: [
+				"4BF67E397CDCCF83"
+				"68573994197909CE"
+			]
+			dependency_requirement: "one_completed"
+			id: "22F75ADE22CF910C"
+			tasks: [{
+				id: "3CBE773F1B0A8BE0"
+				type: "item"
+				item: {
+					id: "minecraft:iron_sword"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 7.5d
+			y: 0.0d
+			dependencies: ["13CD11BC46BAE653"]
+			id: "4B1559B2DE3AC356"
+			tasks: [{
+				id: "328B05C48844EFBA"
+				type: "item"
+				title: "Any #forge:gems/diamond"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:gems/diamond"
+					}
+				}
+			}]
+		}
+		{
+			x: 7.5d
+			y: 2.0d
+			dependencies: [
+				"22F75ADE22CF910C"
+				"4B1559B2DE3AC356"
+			]
+			dependency_requirement: "one_completed"
+			id: "459C3FE150984DA2"
+			tasks: [{
+				id: "112B0FEBA36CA645"
+				type: "item"
+				item: {
+					id: "minecraft:diamond_sword"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 8.5d
+			y: 0.0d
+			dependencies: ["4B1559B2DE3AC356"]
+			id: "7300A08F8EE75A3C"
+			tasks: [{
+				id: "08E2CDAE3190B158"
+				type: "item"
+				item: {
+					id: "minecraft:diamond_pickaxe"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 9.5d
+			y: 0.0d
+			dependencies: ["7300A08F8EE75A3C"]
+			id: "6E47C203F8DA7D43"
+			tasks: [{
+				id: "754EC35094F2BE54"
+				type: "item"
+				item: "minecraft:obsidian"
+			}]
+		}
+		{
+			x: 10.5d
+			y: 0.0d
+			dependencies: [
+				"6E47C203F8DA7D43"
+				"007FD6FA04FC1ABA"
+			]
+			dependency_requirement: "one_completed"
+			id: "77DC72A73D8A95A9"
+			tasks: [{
+				id: "0ED26237688CE42F"
+				type: "dimension"
+				dimension: "minecraft:the_nether"
+			}]
+		}
+		{
+			x: 5.5d
+			y: -2.0d
+			dependencies: ["68573994197909CE"]
+			optional: true
+			secret: true
+			id: "22A110AEB8099325"
+			tasks: [{
+				id: "20B523E2E2F59109"
+				type: "item"
+				item: "minecraft:bucket"
+			}]
+		}
+		{
+			x: 10.5d
+			y: -2.0d
+			dependencies: ["22A110AEB8099325"]
+			optional: true
+			secret: true
+			id: "007FD6FA04FC1ABA"
+			tasks: [{
+				id: "7D7CA1527F2A4AB2"
+				type: "item"
+				item: "minecraft:lava_bucket"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 3.5d
+			shape: "diamond"
+			dependencies: ["459C3FE150984DA2"]
+			optional: true
+			id: "171634ACE2CD8A36"
+			tasks: [{
+				id: "2831C5AEE3A5FE8F"
+				type: "kill"
+				entity: "minecraft:zombie"
+				value: 100L
+			}]
+		}
+		{
+			x: 1.5d
+			y: -2.0d
+			dependencies: ["6FB7E80B351342B2"]
+			id: "1611E0C8983C72D4"
+			tasks: [{
+				id: "178F622B02ABECAC"
+				type: "item"
+				item: {
+					id: "minecraft:wooden_axe"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 1.5d
+			y: -4.0d
+			shape: "diamond"
+			dependencies: ["1611E0C8983C72D4"]
+			optional: true
+			id: "2FAE3FCD81038A2C"
+			tasks: [{
+				id: "3A913238FAF2FF54"
+				type: "item"
+				title: "Any #minecraft:logs"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+				count: 10000L
+				consume_items: true
+			}]
+		}
+	]
+	quest_links: [ ]
+}

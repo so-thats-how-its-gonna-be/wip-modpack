@@ -1,0 +1,373 @@
+{
+	id: "427E6472C752CDB0"
+	group: "4C4EA1E10152AFD7"
+	order_index: 1
+	filename: "a_trip_to_arizona"
+	title: "A Trip To Arizona"
+	icon: "minecraft:netherrack"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			icon: "minecraft:netherrack"
+			x: -2.0d
+			y: -0.5d
+			shape: "octagon"
+			dependencies: ["77DC72A73D8A95A9"]
+			size: 1.5d
+			id: "76C06EAD01C7BC7D"
+			tasks: [{
+				id: "74CCA012F3F31C3A"
+				type: "custom"
+			}]
+		}
+		{
+			title: "Crimson Reality"
+			icon: "minecraft:crimson_nylium"
+			x: -1.0d
+			y: -4.0d
+			dependencies: ["4EAAF4A065B2A329"]
+			secret: true
+			id: "297AA4E05412A52D"
+			tasks: [{
+				id: "10C55D1206565D69"
+				type: "biome"
+				secret: true
+				biome: "minecraft:crimson_forest"
+			}]
+		}
+		{
+			title: "Warped Perceptions"
+			icon: "minecraft:warped_nylium"
+			x: -3.0d
+			y: -4.0d
+			dependencies: ["4EAAF4A065B2A329"]
+			secret: true
+			id: "1DCCDC983A5F7396"
+			tasks: [{
+				id: "0F33839999CB4318"
+				type: "biome"
+				biome: "minecraft:warped_forest"
+			}]
+		}
+		{
+			icon: "minecraft:chiseled_nether_bricks"
+			x: -0.5d
+			y: -0.5d
+			dependencies: ["76C06EAD01C7BC7D"]
+			id: "5B9ABED3F2117DF2"
+			tasks: [{
+				id: "74C7848F21B4B270"
+				type: "structure"
+				structure: "minecraft:fortress"
+			}]
+		}
+		{
+			x: 0.5d
+			y: -0.5d
+			dependencies: ["5B9ABED3F2117DF2"]
+			id: "090991094ED67290"
+			tasks: [
+				{
+					id: "6D084A4829F71676"
+					type: "item"
+					title: "Any #forge:rods/blaze"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:rods/blaze"
+						}
+					}
+				}
+				{
+					id: "2BFC145DE3A2D218"
+					type: "kill"
+					entity: "minecraft:blaze"
+					value: 1L
+				}
+			]
+		}
+		{
+			x: 1.5d
+			y: -0.5d
+			dependencies: [
+				"191EF6DC9AD4E029"
+				"090991094ED67290"
+			]
+			id: "7DDEBBFB170CCAEC"
+			tasks: [{
+				id: "39FFC22F4BA34BB9"
+				type: "item"
+				item: "minecraft:ender_eye"
+			}]
+		}
+		{
+			x: 1.5d
+			y: -1.5d
+			hide_dependency_lines: true
+			dependencies: ["76C06EAD01C7BC7D"]
+			id: "191EF6DC9AD4E029"
+			tasks: [{
+				id: "4B5B9827FAB26F4A"
+				type: "item"
+				item: "minecraft:ender_pearl"
+			}]
+		}
+		{
+			x: 2.5d
+			y: -0.5d
+			dependencies: ["7DDEBBFB170CCAEC"]
+			id: "2854CF806FF12514"
+			tasks: [{
+				id: "76F339D5F1C0D324"
+				type: "structure"
+				structure: "minecraft:stronghold"
+			}]
+		}
+		{
+			x: 3.5d
+			y: -0.5d
+			dependencies: ["2854CF806FF12514"]
+			id: "48F5835DE7E472F4"
+			tasks: [{
+				id: "14C87CC37DEAB45F"
+				type: "dimension"
+				dimension: "minecraft:the_end"
+			}]
+		}
+		{
+			title: "Where the hell am I???"
+			disable_toast: true
+			x: -2.0d
+			y: -2.0d
+			dependencies: ["76C06EAD01C7BC7D"]
+			id: "4EAAF4A065B2A329"
+		}
+		{
+			title: "Waste Of Time"
+			icon: "minecraft:netherrack"
+			x: -1.0d
+			y: -2.0d
+			dependencies: ["4EAAF4A065B2A329"]
+			id: "5F2893E71F5B9B92"
+			tasks: [{
+				id: "0A427BB7C2C8194B"
+				type: "biome"
+				biome: "minecraft:nether_wastes"
+			}]
+		}
+		{
+			title: "Volcanic Activity (In Hell)"
+			icon: "minecraft:basalt"
+			x: -3.0d
+			y: -2.0d
+			dependencies: ["4EAAF4A065B2A329"]
+			id: "5E81D9FA67DB48DA"
+			tasks: [{
+				id: "3BBCA29DB817F8EF"
+				type: "biome"
+				biome: "minecraft:basalt_deltas"
+			}]
+		}
+		{
+			icon: "minecraft:chiseled_polished_blackstone"
+			x: -2.0d
+			y: 1.0d
+			dependencies: ["76C06EAD01C7BC7D"]
+			id: "62F8F41BB3E54AFB"
+			tasks: [{
+				id: "159773BABFF28472"
+				type: "structure"
+				structure: "minecraft:bastion"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 2.0d
+			shape: "diamond"
+			dependencies: ["62F8F41BB3E54AFB"]
+			optional: true
+			id: "5FDF2DC129F564DB"
+			tasks: [{
+				id: "2586B94977D2F6B0"
+				type: "questsadditions:killnbt"
+				entity: "minecraft:piglin"
+				value: 25L
+				nbt: { }
+				checkItem: true
+				item: {
+					id: "minecraft:golden_sword"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 0.5d
+			y: 2.0d
+			shape: "diamond"
+			dependencies: ["5FDF2DC129F564DB"]
+			optional: true
+			id: "404B82FA0605066D"
+			tasks: [{
+				id: "33A82748A0850722"
+				type: "questsadditions:killnbt"
+				entity: "minecraft:piglin_brute"
+				value: 10L
+				nbt: { }
+				checkItem: true
+				item: {
+					id: "minecraft:golden_axe"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 0.5d
+			y: -4.0d
+			shape: "diamond"
+			dependencies: ["297AA4E05412A52D"]
+			optional: true
+			id: "35618E56F148C459"
+			tasks: [{
+				id: "4251B6F0D8D154D5"
+				type: "kill"
+				icon: "alexsmobs:mosquito_larva"
+				entity: "alexsmobs:crimson_mosquito"
+				value: 50L
+			}]
+		}
+		{
+			x: -4.5d
+			y: -4.0d
+			shape: "diamond"
+			dependencies: ["1DCCDC983A5F7396"]
+			optional: true
+			id: "4E1546A704ED8786"
+			tasks: [{
+				id: "2561BB85F89A7F83"
+				type: "kill"
+				icon: "alexsmobs:warped_muscle"
+				secret: true
+				entity: "alexsmobs:warped_mosco"
+				value: 1L
+			}]
+		}
+		{
+			x: -3.5d
+			y: 1.0d
+			dependencies: ["76C06EAD01C7BC7D"]
+			id: "48E12AA91743A836"
+		}
+		{
+			x: -4.5d
+			y: 1.0d
+			dependencies: ["48E12AA91743A836"]
+			id: "4A90A114FBC2167D"
+			tasks: [{
+				id: "34B97D0BD68280B5"
+				type: "item"
+				title: "Any #forge:gems/quartz"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:gems/quartz"
+					}
+				}
+			}]
+		}
+		{
+			x: -3.5d
+			y: 2.0d
+			dependencies: ["48E12AA91743A836"]
+			id: "59314335DB891E0F"
+			tasks: [{
+				id: "5E119854BD446E7A"
+				type: "item"
+				title: "Any #forge:ingots/gold"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ingots/gold"
+					}
+				}
+			}]
+		}
+		{
+			x: -4.5d
+			y: 3.0d
+			shape: "diamond"
+			dependencies: ["59314335DB891E0F"]
+			optional: true
+			id: "6907528E1A33957A"
+			tasks: [{
+				id: "11977FB570A9E623"
+				type: "item"
+				title: "Any #forge:ingots/gold"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ingots/gold"
+					}
+				}
+				count: 3000L
+				consume_items: true
+			}]
+		}
+		{
+			x: -5.5d
+			y: 2.0d
+			shape: "diamond"
+			dependencies: ["4A90A114FBC2167D"]
+			optional: true
+			id: "13E42E5BA36EAEA8"
+			tasks: [{
+				id: "6C32345518C0E888"
+				type: "item"
+				title: "Any #forge:gems/quartz"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:gems/quartz"
+					}
+				}
+				count: 3000L
+				consume_items: true
+			}]
+		}
+		{
+			x: 0.5d
+			y: -1.5d
+			dependencies: ["090991094ED67290"]
+			id: "58D269BC04284EB1"
+			tasks: [{
+				id: "2DC8F1C82C3FD36F"
+				type: "item"
+				item: "minecraft:brewing_stand"
+			}]
+		}
+		{
+			icon: "minecraft:soul_soil"
+			x: -2.0d
+			y: -4.0d
+			dependencies: ["4EAAF4A065B2A329"]
+			id: "4F89B331AAFB9785"
+			tasks: [{
+				id: "0F04EB874FB4C728"
+				type: "biome"
+				biome: "minecraft:soul_sand_valley"
+			}]
+		}
+	]
+	quest_links: [ ]
+}
