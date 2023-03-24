@@ -20,3 +20,9 @@ Assignments will be given in the **issues** tab of the repository.
 With your assignment, you will be given the locations and names for the textures to reduce confusion.
 
 Once you have completed your assignment, open a pull request to the main repository from your fork branch.
+
+### Conventions
+
+- All textures should be 16x16 pixels
+- All textures should be .png format
+- Backgrounds should be transparent
