@@ -1,8 +1,37 @@
 // priority: 0
 
-console.info('Hello, World! (You will see this line every time client resources reload)')
+let MOD = (id, item) => { return item ? `${id}:${item}` : id }
+
+let CGM = (item) => { return MOD('cgm', item) }
+
+let cgmGuns = [CGM('pistol'), CGM('rifle'), CGM('shotgun'), CGM('heavy_rifle'), CGM('assault_rifle'), CGM('machine_pistol'), CGM('mini_gun'), CGM('bazooka'), CGM('grenade_launcher')]
 
 JEIEvents.hideItems(event => {
-	// Hide items in JEI here
-	// event.hide('minecraft:cobblestone')
+
+})
+
+JEIEvents.information(event => {
+	event.add(CGM('workbench'), [
+		"Used to paint guns!",
+		"",
+		"Cannot be used to craft guns."
+	])
+})
+
+JEIEvents.removeCategories(event => {
+	event.remove('cgm:workbench')
+})
+
+ItemEvents.tooltip(event => {
+	event.add(cgmGuns, [
+		"",
+		"Paint in the Gun Painting Table!",
+		""
+	])
+
+	event.add([CGM('workbench')], [
+		"",
+		"Use to paint guns!",
+		""
+	])
 })

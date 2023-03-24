@@ -19,38 +19,43 @@ let SPM = (item, amount, chance) => MOD('sulfurpotassiummod', item, amount, chan
 let CRA = (item, amount, chance) => MOD('createaddition', item, amount, chance)
 let CBC = (item, amount, chance) => MOD('createbigcannons', item, amount, chance)
 let POTR = (item, amount, chance) => MOD('adpother', item, amount, chance)
+let AC = (item, amount, chance) => MOD('adchimneys', item, amount, chance)
 //#endregion
+
+let cgmGuns = [CGM('pistol'), CGM('rifle'), CGM('shotgun'), CGM('heavy_rifle'), CGM('assault_rifle'), CGM('machine_pistol'), CGM('mini_gun'), CGM('bazooka'), CGM('grenade_launcher')]
 
 ServerEvents.recipes(event => {
 	
 	//#region Automation recipes
 
-	//#region Create
-
 	//#region Stone breakdown
 
-	event.remove({output: MC('sand'), mod: 'create'})
+	//#region Create
 
+	//Remove existing recipes
+	event.remove({output: MC('sand'), mod: 'create'})
 	event.remove({input: MC('sand'), type: C('splashing')})
 	event.remove({input: MC('red_sand'), type: C('splashing')})
 	event.remove({input: MC('gravel'), type: C('splashing')})
-
 	event.remove({input: MC('cobblestone'), type: C('milling')})
 
-	createCrushing(event, [MC('cobblestone')], [MC('stone')], 50)
-	createMilling(event, [MC('gravel')], [F('#cobblestone/normal')], 250)
-	createCrushing(event, [MC('gravel')], [F('#cobblestone/normal')], 50)
-	createMilling(event, [MC('sand', 1, 50), BOP('orange_sand', 1, 20), BOP('white_sand', 1, 20), BOP('black_sand', 1, 20)], [F('#gravel')], 250)
-	createCrushing(event, [MC('sand', 1, 90)], [F('#gravel')], 50)
-	createMilling(event, [MC('redstone', 1, 0.5), MC('glowstone_dust', 1, 0.5), SPM('sulfur', 1, 0.5), MC('sand', 1, 10)], [MC('#sand')], 250)
+	event.recipes.createCrushing([MC('cobblestone')], [MC('stone')])
+	event.recipes.createCrushing([MC('gravel')], [F('#cobblestone/normal')])
+	event.recipes.createCrushing([Item.of(MC('sand')).withChance(90)], [F('#gravel')])
+	event.recipes.createCrushing([Item.of(MC('redstone')).withChance(5), Item.of(MC('glowstone_dust')).withChance(5), Item.of(SPM('sulfur')).withChance(5), Item.of(MC('sand')).withChance(15)], [MC('#sand')])
+	event.recipes.createCrushing([Item.of(MC('iron_nugget')).withChance(15), Item.of(C('crushed_iron_ore')).withChance(15)], [MC('flint')])
 
-	createCompacting(event, [MC('coarse_dirt')], [F('#gravel'), MC('clay_ball'), F('#seeds'), fluidJson(MC('water'), 50)])
-	createMilling(event, [MC('dirt'), MC('flint'), MC('flint', 1, 20), MC('clay_ball', 1, 10)], [MC('coarse_dirt')], 250)
+	event.recipes.createMilling([MC('gravel')], [F('#cobblestone/normal')])
+	event.recipes.createMilling([Item.of(MC('sand')).withChance(50), Item.of(BOP('orange_sand')).withChance(20), Item.of(BOP('white_sand')).withChance(20), Item.of(BOP('black_sand')).withChance(20)], [F('#gravel')])
+	event.recipes.createMilling([MC('dirt'), MC('flint'), Item.of(MC('flint')).withChance(20), Item.of(MC('clay_ball')).withChance(10)], [MC('coarse_dirt')])
+	event.recipes.createMilling([MC('gravel'), MC('clay_ball'), Item.of(MC('clay_ball')).withChance(10), Item.of(MC('dirt')).withChance(10)], [MC('dirt')])
+	event.recipes.createMilling([Item.of(MC('iron_nugget')).withChance(10), Item.of(C('crushed_iron')).withChance(5)], [MC('flint')])
 
-	createMilling(event, [MC('gravel'), MC('clay_ball'), MC('clay_ball', 1, 10), MC('dirt', 1, 10)], [MC('dirt')], 250)
+	event.recipes.createCompacting([MC('coarse_dirt')], [F('#gravel'), MC('clay_ball'), F('#seeds'), fluidJson(MC('water'), 50)])
+	event.recipes.createCompacting([MC('gravel')], [MC('flint', 5)])
 
-	createSplashing(event, [MC('clay_ball', 1, 25), MC('clay_ball', 1, 10)], [MC('#sand')])
-	createSplashing(event, [MC('iron_nugget', 1, 0.5), MC('flint'), MC('flint', 1, 25)], [F('#gravel')])
+	event.recipes.createSplashing([Item.of(MC('clay_ball')).withChance(25), Item.of(MC('clay_ball')).withChance(10)], [MC('#sand')])
+	event.recipes.createSplashing([Item.of(MC('iron_nugget')).withChance(0.5), MC('flint'), Item.of(MC('flint')).withChance(25)], [F('#gravel')])
 
 	//#endregion
 
@@ -74,7 +79,14 @@ ServerEvents.recipes(event => {
 	event.shapeless(ND('soul_compost'), [
 		MC('soul_soil'),
 		SPM('sulfur', 3),
-		MC('bone_meal', 2),
+		MC('crimson_roots', 2),
+		F('#bones')
+	])
+
+	event.shapeless(ND('soul_compost'), [
+		MC('soul_soil'),
+		SPM('sulfur', 3),
+		MC('warped_roots', 2),
 		F('#bones')
 	])
 	
@@ -82,7 +94,7 @@ ServerEvents.recipes(event => {
 
 	//#region Sulfur bleaches Create schematics
 	event.shapeless(MC('paper'), [
-		SPM('sulfur', 1),
+		SPM('sulfur'),
 		C('empty_schematic')
 	])
 	//#endregion
@@ -90,7 +102,7 @@ ServerEvents.recipes(event => {
 	//#region Create Tree Fertilizer uses sulfur
 	event.remove({output: C('tree_fertilizer')})
 	event.shapeless(C('tree_fertilizer'), [
-		SPM('sulfur', 1),
+		SPM('sulfur'),
 		MC('bone_meal', 3),
 		F('#leaves')
 	])
@@ -101,12 +113,14 @@ ServerEvents.recipes(event => {
 	//#region More potassium recipes
 
 	//#region Vanilla tnt uses potassium and gunpowder
+
 	event.remove({output: MC('tnt')})
 	event.shapeless(MC('tnt'), [
-		SPM('potassium', 1),
+		SPM('potassium'),
 		MC('gunpowder', 4),
 		MC('sand')
 	])
+
 	//#endregion
 
 	//#endregion
@@ -115,15 +129,24 @@ ServerEvents.recipes(event => {
 
 	event.remove({mod: 'cgm'})
 
+	event.shapeless(CGM('workbench'), [
+		MC('crafting_table'),
+		AC('wooden_paintbrush')
+	])
+
 	//#region Gun recipes
 
-	// Pistol is the only gun recipe that wont take any gun parts
-	event.shapeless(CGM("pistol"), [
-    F("#ingots/steel", 4),
-    KJS("gun_barrel_basic"),
-    F("#dusts/diamond"),
-    KJS("gun_handle")
-  	])
+	event.shapeless(Item.of(CGM('pistol')), [
+		F("#ingots/steel", 4),
+		KJS("gun_barrel_basic"),
+		F("#dusts/diamond"),
+		KJS("gun_handle"),
+	])
+
+	// Allow crafting each gun out of itself to recolor it
+	cgmGuns.forEach(gun => {
+		cgmWorkBench(event, gun, [gun])
+	})
 
 	//#endregion
 
@@ -145,6 +168,27 @@ ServerEvents.recipes(event => {
 		F('#plates/steel'),
 		MC('gunpowder', 3),
 		F('#nuggets/gold', 2)
+	])
+
+	event.shapeless(CGM('missile', 4), [
+		F('#plates/steel'),
+		MC('gunpowder', 4),
+		F('#dyes/red')
+	])
+
+	//#region Grenade recipes
+
+	event.shapeless(CGM('grenade'), [
+		F('#ingots/iron'),
+		MC('gunpowder', 4),
+		SPM('potassium')
+	])
+
+	event.shapeless(CGM('stun_grenade'), [
+		F('#ingots/iron'),
+		MC('gunpowder', 4),
+		SPM('potassium'),
+		MC('#sand')
 	])
 
 	//#endregion
@@ -170,11 +214,12 @@ ServerEvents.recipes(event => {
 	var pollutants = ['carbon', 'dust', 'sulfur']
 
 	pollutants.forEach(pollutant => {
+
 		event.stonecutting(KJS(`filter_${pollutant}`), KJS('filter_base'))
 		event.stonecutting(KJS(`ultrafine_filter_${pollutant}`), KJS('ultrafine_filter_base'))
 
-		createMixing(event, [KJS(`filter_${pollutant}`), fluidJson(POTR('polluted_water'), 90)], [KJS(`dirty_filter_${pollutant}`), fluidJson(MC('water'), 100)])
-		createMixing(event, [KJS(`ultrafine_filter_${pollutant}`), fluidJson(POTR('polluted_water'), 270)], [KJS(`dirty_ultrafine_filter_${pollutant}`), fluidJson(MC('water'), 300)])
+		event.recipes.createMixing([KJS(`filter_${pollutant}`), Fluid.of(POTR('polluted_water'), 90)], [KJS(`dirty_filter_${pollutant}`), Fluid.of(MC('water'), 100)])
+		event.recipes.createMixing([KJS(`ultrafine_filter_${pollutant}`), Fluid.of(POTR('polluted_water'), 270)], [KJS(`dirty_ultrafine_filter_${pollutant}`), Fluid.of(MC('water'), 300)])
 
 		event.shapeless(KJS('filter_base'), [
 			KJS(`filter_${pollutant}`),
@@ -189,13 +234,13 @@ ServerEvents.recipes(event => {
 		])
 	})
 
-	createSplashing(event, [KJS('filter_carbon'), MC('charcoal', 1, 25)], [KJS('dirty_filter_carbon')])
-	createSplashing(event, [KJS('filter_dust'), MC('sand', 1, 25)], [KJS('dirty_filter_dust')])
-	createSplashing(event, [KJS('filter_sulfur'), SPM('sulfur', 1, 25)], [KJS('dirty_filter_sulfur')])
+	event.recipes.createSplashing([KJS('filter_carbon'), MC('charcoal', 1, 25)], [KJS('dirty_filter_carbon')])
+	event.recipes.createSplashing([KJS('filter_dust'), MC('sand', 1, 25)], [KJS('dirty_filter_dust')])
+	event.recipes.createSplashing([KJS('filter_sulfur'), SPM('sulfur', 1, 25)], [KJS('dirty_filter_sulfur')])
 
-	createSplashing(event, [KJS('ultrafine_filter_carbon'), MC('charcoal', 1, 75), MC('charcoal', 1, 25)], [KJS('dirty_ultrafine_filter_carbon')])
-	createSplashing(event, [KJS('ultrafine_filter_dust'), MC('sand', 1, 75), MC('sand', 1, 25)], [KJS('dirty_ultrafine_filter_dust')])
-	createSplashing(event, [KJS('ultrafine_filter_sulfur'), SPM('sulfur', 1, 75), SPM('sulfur', 1, 25)], [KJS('dirty_ultrafine_filter_sulfur')])
+	event.recipes.createSplashing([KJS('ultrafine_filter_carbon'), MC('charcoal', 1, 75), MC('charcoal', 1, 25)], [KJS('dirty_ultrafine_filter_carbon')])
+	event.recipes.createSplashing([KJS('ultrafine_filter_dust'), MC('sand', 1, 75), MC('sand', 1, 25)], [KJS('dirty_ultrafine_filter_dust')])
+	event.recipes.createSplashing([KJS('ultrafine_filter_sulfur'), SPM('sulfur', 1, 75), SPM('sulfur', 1, 25)], [KJS('dirty_ultrafine_filter_sulfur')])
 
 	//#endregion
 
@@ -233,145 +278,6 @@ function cgmWorkBench(event, result, materials){
 		result: Item.of(result).toJson()
 	})
 }
-//#endregion
-
-//#region Create compat
-
-//#region Mixing recipes
-
-function createMixing(event, results, materials){
-	event.custom({
-		type: C('mixing'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
-function createMixingHeated(event, results, materials){
-	event.custom({
-		type: C('mixing'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results),
-		heatRequirement: 'heated'
-	})}
-
-function createMixingSuperHeated(event, results, materials){
-	event.custom({
-		type: C('mixing'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results),
-		heatRequirement: 'superheated'
-	})}
-
-//#endregion
-
-//#region Sequenced Assembly recipes
-function createSequencedAssembly(event, results, startingItem, sequence, transitionalItem, loops){
-	event.custom({
-		type: C('sequenced_assembly'),
-		ingredient: Item.of(startingItem).toJson(),
-		sequence: sequence,
-		transitionalItem: transitionalItem,
-		loops: loops,
-		results: formatMaterials(results)
-	})}
-//#endregion
-
-function createCrushing(event, results, materials, processingTime){
-	event.custom({
-		type: C('crushing'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results),
-		processingTime: processingTime
-	})}
-
-function createMilling(event, results, materials, processingTime){
-	event.custom({
-		type: C('milling'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results),
-		processingTime: processingTime
-	})}
-
-function createMechanicalCrafting(event, result, materialPattern, materialKeys){
-	event.custom({
-		type: C('mechanical_crafting'),
-		pattern: materialPattern,
-		key: materialKeys,
-		result: Item.of(result).toJson(),
-		acceptMirrored: true
-	})}
-
-function createPressing(event, result, materials){
-	event.custom({
-		type: C('pressing'),
-		ingredients: formatMaterials(materials),
-		result: Item.of(result).toJson()
-	})}
-
-function createSandpaperPolishing(event, results, materials){
-	event.custom({
-		type: C('sandpaper_polishing'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
-function createCompacting(event, results, materials){
-	event.custom({
-		type: C('compacting'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
-function createCutting(event, results, materials, processingTime){
-	event.custom({
-		type: C('cutting'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results),
-		processingTime: processingTime
-	})}
-
-function createDeploying(event, results, materials){
-	event.custom({
-		type: C('deploying'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
-function createEmptying(event, results, materials){
-	event.custom({
-		type: C('emptying'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
-function createFilling(event, results, materials){
-	event.custom({
-		type: C('filling'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
-function createHaunting(event, results, materials){
-	event.custom({
-		type: C('haunting'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
-function createItemApplication(event, results, materials){
-	event.custom({
-		type: C('item_application'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
-function createSplashing(event, results, materials){
-	event.custom({
-		type: C('splashing'),
-		ingredients: formatMaterials(materials),
-		results: formatMaterials(results)
-	})}
-
 //#endregion
 
 //#region Create Additions compat
