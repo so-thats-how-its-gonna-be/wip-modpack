@@ -137,12 +137,16 @@ ServerEvents.recipes(event => {
 
 	//#region Gun recipes
 
-	event.shapeless(Item.of(CGM('pistol')), [
-		F("#ingots/steel", 4),
-		KJS("gun_barrel_basic"),
-		F("#dusts/diamond"),
-		KJS("gun_handle"),
-	])
+	event.shaped(Item.of(CGM('pistol')), [
+		'SSB',
+		'HD ',
+		'   '
+	], {
+		S: F("#ingots/steel"),
+		B: KJS("gun_barrel_basic"),
+		D: F("#dusts/diamond"),
+		H: KJS("gun_handle")
+	})
 
 	// Allow crafting each gun out of itself to recolor it
 	cgmGuns.forEach(gun => {
