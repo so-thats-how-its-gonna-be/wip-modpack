@@ -20,6 +20,7 @@ let CRA = (item, amount, chance) => MOD('createaddition', item, amount, chance)
 let CBC = (item, amount, chance) => MOD('createbigcannons', item, amount, chance)
 let POTR = (item, amount, chance) => MOD('adpother', item, amount, chance)
 let AC = (item, amount, chance) => MOD('adchimneys', item, amount, chance)
+let PB = (item, amount, chance) => MOD('productivebees', item, amount, chance)
 //#endregion
 
 let cgmGuns = [CGM('pistol'), CGM('rifle'), CGM('shotgun'), CGM('heavy_rifle'), CGM('assault_rifle'), CGM('machine_pistol'), CGM('mini_gun'), CGM('bazooka'), CGM('grenade_launcher')]
@@ -195,6 +196,8 @@ ServerEvents.recipes(event => {
 
 	//#endregion
 
+	//#endregion
+
 	//#region Custom item recipes
 	
 	//#region Air filters
@@ -212,26 +215,26 @@ ServerEvents.recipes(event => {
 	])
 
 	var pollutants = ['carbon', 'dust', 'sulfur']
+	var pollutantItems = [MC('charcoal'), MC('sand'), SPM('sulfur')]
+	var filterTypes = ['filter', 'ultrafine_filter']
 
 	pollutants.forEach(pollutant => {
+		filterTypes.forEach(filterType => {
 
-		event.stonecutting(KJS(`filter_${pollutant}`), KJS('filter_base'))
-		event.stonecutting(KJS(`ultrafine_filter_${pollutant}`), KJS('ultrafine_filter_base'))
+			var ultrafine = filterType == 'ultrafine_filter'
 
-		event.recipes.createMixing([KJS(`filter_${pollutant}`), Fluid.of(POTR('polluted_water'), 90)], [KJS(`dirty_filter_${pollutant}`), Fluid.of(MC('water'), 100)])
-		event.recipes.createMixing([KJS(`ultrafine_filter_${pollutant}`), Fluid.of(POTR('polluted_water'), 270)], [KJS(`dirty_ultrafine_filter_${pollutant}`), Fluid.of(MC('water'), 300)])
+			event.stonecutting(KJS(`${filterType}_${pollutant}`), KJS(`${filterType}_base`))
 
-		event.shapeless(KJS('filter_base'), [
-			KJS(`filter_${pollutant}`),
-			SPM('sulfur'),
-			F('#filter_base_materials')
-		])
+			event.recipes.createMixing([KJS(`${filterType}_${pollutant}`), Fluid.of(POTR('polluted_water'), ultrafine ? 270 : 90)], [KJS(`dirty_${filterType}_${pollutant}`), Fluid.of(MC('water'), ultrafine ? 300 : 100)])
 
-		event.shapeless(KJS('ultrafine_filter_base'), [
-			KJS(`ultrafine_filter_${pollutant}`),
-			SPM('sulfur', 3),
-			F('#filter_base_materials', 3)
-		])
+			event.shapeless(KJS(`${filterType}_base`), [
+				KJS(`${filterType}_${pollutant}`),
+				SPM('sulfur'),
+				F('#filter_base_materials')
+			])
+			
+			event.recipes.createSplashing([KJS(`${filterType}_${pollutant}`), Item.of(pollutantItems[pollutants.indexOf(pollutant)]).withChance(ultrafine ? 0.75 : 0.25)], [KJS(`dirty_${filterType}_${pollutant}`)])
+		})
 	})
 
 	event.recipes.createSplashing([KJS('filter_carbon'), Item.of(MC('charcoal')).withChance(0.25)], [KJS('dirty_filter_carbon')])
@@ -251,6 +254,14 @@ ServerEvents.recipes(event => {
 		F('#rods/iron', 2),
 		C('sand_paper')
 	]).damageIngredient(Item.of(C('sand_paper')))
+
+	//#endregion
+
+	//#endregion
+
+	//#region Productive bees recipes
+
+	//#region Compat
 
 	//#endregion
 
@@ -340,6 +351,40 @@ function fdCookingContainer(event, result, materials, xp, cookingTime, container
 		experience: xp,
 		cookingtime: cookingTime,
 		container: Item.of(container).toJson()
+	})}
+
+//#endregion
+
+//#region Productive Bees compat
+
+function pbBeeBreeding(event, parent1, parent2, results){
+	event.custom({
+		type: PB('bee_breeding'),
+		parent1: parent1,
+		parent2: parent2,
+		offspring: results
+	})}
+
+function pbBeeConversion(event, parent, result, item){
+	event.custom({
+		type: PB('bee_conversion'),
+		source: parent,
+		result: result,
+		item: Item.of(item).toJson()
+	})}
+
+function pbBeeProduce(event, bee, results){
+	event.custom({
+		type: PB('bee_produce'),
+		ingredient: bee,
+		produce: results
+	})}
+
+function pbCentrifuge(event, item, outputs){
+	event.custom({
+		type: PB('centrifuge'),
+		ingredient: item,
+		outputs: outputs
 	})}
 
 //#endregion
