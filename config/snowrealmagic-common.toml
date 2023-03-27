@@ -16,6 +16,7 @@ sustainGrassIfLayerMoreThanOne = true
 retainOriginalBlocks = false
 advancedBlockInteraction = true
 sneakSnowball = true
+mobSpawningMaxLayers = 8
 
 [integration]
 accumulationWinterOnly = false

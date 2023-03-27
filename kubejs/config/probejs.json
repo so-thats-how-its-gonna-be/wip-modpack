@@ -3,7 +3,7 @@
   "noAggressiveProbing": false,
   "vanillaOrder": true,
   "exportClassNames": true,
-  "allowObfuscated": false,
+  "allowObfuscated": true,
   "docsTimestamp": 0,
   "allowRegistryObjectDumps": true,
   "requireSingleAndPerm": true,
