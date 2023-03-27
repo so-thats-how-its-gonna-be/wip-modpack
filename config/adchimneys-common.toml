@@ -37,7 +37,7 @@
 		#Range: 0 ~ 1000
 		consumption = 50
 		#Whether Forge Energy is required or not
-		enabled = false
+		enabled = true
 		#Maximum amount of energy that can be held
 		#Range: 0 ~ 100000
 		capacity = 10000
