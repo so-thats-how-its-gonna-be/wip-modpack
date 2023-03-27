@@ -41,21 +41,21 @@ ServerEvents.recipes(event => {
 
 	event.recipes.createCrushing([MC('cobblestone')], [MC('stone')])
 	event.recipes.createCrushing([MC('gravel')], [F('#cobblestone/normal')])
-	event.recipes.createCrushing([Item.of(MC('sand')).withChance(90)], [F('#gravel')])
-	event.recipes.createCrushing([Item.of(MC('redstone')).withChance(5), Item.of(MC('glowstone_dust')).withChance(5), Item.of(SPM('sulfur')).withChance(5), Item.of(MC('sand')).withChance(15)], [MC('#sand')])
-	event.recipes.createCrushing([Item.of(MC('iron_nugget')).withChance(15), Item.of(C('crushed_iron_ore')).withChance(15)], [MC('flint')])
+	event.recipes.createCrushing([Item.of(MC('sand')).withChance(0.90)], [F('#gravel')])
+	event.recipes.createCrushing([Item.of(MC('redstone')).withChance(0.05), Item.of(MC('glowstone_dust')).withChance(0.05), Item.of(SPM('sulfur')).withChance(0.05), Item.of(MC('sand')).withChance(0.15)], [MC('#sand')])
+	event.recipes.createCrushing([Item.of(MC('iron_nugget')).withChance(0.15), Item.of(C('crushed_iron_ore')).withChance(0.15)], [MC('flint')])
 
 	event.recipes.createMilling([MC('gravel')], [F('#cobblestone/normal')])
-	event.recipes.createMilling([Item.of(MC('sand')).withChance(50), Item.of(BOP('orange_sand')).withChance(20), Item.of(BOP('white_sand')).withChance(20), Item.of(BOP('black_sand')).withChance(20)], [F('#gravel')])
-	event.recipes.createMilling([MC('dirt'), MC('flint'), Item.of(MC('flint')).withChance(20), Item.of(MC('clay_ball')).withChance(10)], [MC('coarse_dirt')])
-	event.recipes.createMilling([MC('gravel'), MC('clay_ball'), Item.of(MC('clay_ball')).withChance(10), Item.of(MC('dirt')).withChance(10)], [MC('dirt')])
-	event.recipes.createMilling([Item.of(MC('iron_nugget')).withChance(10), Item.of(C('crushed_iron')).withChance(5)], [MC('flint')])
+	event.recipes.createMilling([Item.of(MC('sand')).withChance(0.50), Item.of(BOP('orange_sand')).withChance(0.20), Item.of(BOP('white_sand')).withChance(0.20), Item.of(BOP('black_sand')).withChance(0.20)], [F('#gravel')])
+	event.recipes.createMilling([MC('dirt'), MC('flint'), Item.of(MC('flint')).withChance(0.20), Item.of(MC('clay_ball')).withChance(0.10)], [MC('coarse_dirt')])
+	event.recipes.createMilling([MC('gravel'), MC('clay_ball'), Item.of(MC('clay_ball')).withChance(0.10), Item.of(MC('dirt')).withChance(0.10)], [MC('dirt')])
+	event.recipes.createMilling([Item.of(C('crushed_iron_ore')).withChance(0.1), Item.of(C('crushed_iron_ore')).withChance(0.05)], [MC('flint')])
 
 	event.recipes.createCompacting([MC('coarse_dirt')], [F('#gravel'), MC('clay_ball'), F('#seeds'), fluidJson(MC('water'), 50)])
 	event.recipes.createCompacting([MC('gravel')], [MC('flint', 5)])
 
-	event.recipes.createSplashing([Item.of(MC('clay_ball')).withChance(25), Item.of(MC('clay_ball')).withChance(10)], [MC('#sand')])
-	event.recipes.createSplashing([Item.of(MC('iron_nugget')).withChance(0.5), MC('flint'), Item.of(MC('flint')).withChance(25)], [F('#gravel')])
+	event.recipes.createSplashing([Item.of(MC('clay_ball')).withChance(0.25), Item.of(MC('clay_ball')).withChance(0.10)], [MC('#sand')])
+	event.recipes.createSplashing([Item.of(MC('iron_nugget')).withChance(0.05), MC('flint'), Item.of(MC('flint')).withChance(0.25)], [F('#gravel')])
 
 	//#endregion
 
@@ -234,13 +234,13 @@ ServerEvents.recipes(event => {
 		])
 	})
 
-	event.recipes.createSplashing([KJS('filter_carbon'), MC('charcoal', 1, 25)], [KJS('dirty_filter_carbon')])
-	event.recipes.createSplashing([KJS('filter_dust'), MC('sand', 1, 25)], [KJS('dirty_filter_dust')])
-	event.recipes.createSplashing([KJS('filter_sulfur'), SPM('sulfur', 1, 25)], [KJS('dirty_filter_sulfur')])
+	event.recipes.createSplashing([KJS('filter_carbon'), Item.of(MC('charcoal')).withChance(0.25)], [KJS('dirty_filter_carbon')])
+	event.recipes.createSplashing([KJS('filter_dust'), Item.of(MC('sand')).withChance(0.25)], [KJS('dirty_filter_dust')])
+	event.recipes.createSplashing([KJS('filter_sulfur'), Item.of(SPM('sulfur')).withChance(0.25)], [KJS('dirty_filter_sulfur')])
 
-	event.recipes.createSplashing([KJS('ultrafine_filter_carbon'), MC('charcoal', 1, 75), MC('charcoal', 1, 25)], [KJS('dirty_ultrafine_filter_carbon')])
-	event.recipes.createSplashing([KJS('ultrafine_filter_dust'), MC('sand', 1, 75), MC('sand', 1, 25)], [KJS('dirty_ultrafine_filter_dust')])
-	event.recipes.createSplashing([KJS('ultrafine_filter_sulfur'), SPM('sulfur', 1, 75), SPM('sulfur', 1, 25)], [KJS('dirty_ultrafine_filter_sulfur')])
+	event.recipes.createSplashing([KJS('ultrafine_filter_carbon'), Item.of(MC('charcoal')).withChance(0.75), Item.of(MC('charcoal')).withChance(0.25)], [KJS('dirty_ultrafine_filter_carbon')])
+	event.recipes.createSplashing([KJS('ultrafine_filter_dust'), Item.of(MC('sand')).withChance(0.75), Item.of(MC('sand')).withChance(0.25)], [KJS('dirty_ultrafine_filter_dust')])
+	event.recipes.createSplashing([KJS('ultrafine_filter_sulfur'), Item.of(SPM('sulfur')).withChance(0.75), Item.of(SPM('sulfur')).withChance(0.25)], [KJS('dirty_ultrafine_filter_sulfur')])
 
 	//#endregion
 

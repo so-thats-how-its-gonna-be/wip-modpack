@@ -25,13 +25,11 @@ JEIEvents.removeCategories(event => {
 ItemEvents.tooltip(event => {
 	event.add(cgmGuns, [
 		"",
-		"Paint in the Gun Painting Table!",
-		""
+		"Paint in the Gun Painting Table!"
 	])
 
 	event.add([CGM('workbench')], [
 		"",
-		"Use to paint guns!",
-		""
+		"Use to paint guns!"
 	])
 })
