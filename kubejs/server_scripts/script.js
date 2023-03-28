@@ -29,6 +29,8 @@ let honey = (amount) => Fluid.of(C('honey'), amount)
 
 let itemChance = (item, chance) => Item.of(item).withChance(chance)
 
+let path = (location) => location.replace(/:/g, '/')
+
 ServerEvents.recipes(event => {
 	
 	//#region Automation recipes
@@ -275,6 +277,7 @@ ServerEvents.recipes(event => {
 	event.remove({output: PB('milk_bottle')})
 
 	event.replaceInput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
+	event.replaceInput({}, Fluid.of(PB('flowing_honey')), Fluid.of(C('honey')))
 	event.replaceOutput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
 
 	event.replaceInput({}, PB('honey_bucket'), C('honey_bucket'))
@@ -409,8 +412,8 @@ function fdCookingContainer(event, result, materials, xp, cookingTime, container
 //#region Productive Bees compat
 
 function pbBeeEntry(event, fileName, colorMain, colorSecondary, colorParticle, flower, size){
-	if (flower.contains('#')){
-		event.addJson(P(PB(fileName)), {
+	if (flower.includes('#')){
+		event.addJson(path(P(PB(fileName))), {
 			primaryColor: colorMain,
 			secondaryColor: colorSecondary,
 			particleColor: colorParticle,
@@ -418,7 +421,7 @@ function pbBeeEntry(event, fileName, colorMain, colorSecondary, colorParticle, f
 			size: size
 		})
 	} else {
-		event.addJson(P(PB(fileName)), {
+		event.addJson(path(P(PB(fileName))), {
 			primaryColor: colorMain,
 			secondaryColor: colorSecondary,
 			particleColor: colorParticle,
@@ -429,7 +432,7 @@ function pbBeeEntry(event, fileName, colorMain, colorSecondary, colorParticle, f
 }
 
 function pbBeeEntryAdvanced(event, fileName, json){
-	event.addJson(P(PB(fileName)), json)
+	event.addJson(path(P(PB(fileName))), json)
 }
 
 function pbBeeBreeding(event, parent1, parent2, results){
