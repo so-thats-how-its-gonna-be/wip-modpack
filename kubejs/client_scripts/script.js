@@ -3,11 +3,16 @@
 let MOD = (id, item) => { return item ? `${id}:${item}` : id }
 
 let CGM = (item) => { return MOD('cgm', item) }
+let PB = (item) => { return MOD('productivebees', item) }
 
 let cgmGuns = [CGM('pistol'), CGM('rifle'), CGM('shotgun'), CGM('heavy_rifle'), CGM('assault_rifle'), CGM('machine_pistol'), CGM('mini_gun'), CGM('bazooka'), CGM('grenade_launcher')]
 
 JEIEvents.hideItems(event => {
+	event.hide(PB('honey_bucket'))
+})
 
+JEIEvents.hideFluids(event => {
+	event.hide(PB('honey'))
 })
 
 JEIEvents.information(event => {

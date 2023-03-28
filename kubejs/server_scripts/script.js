@@ -267,6 +267,12 @@ ServerEvents.recipes(event => {
 
 	//#region Compat
 
+	event.replaceInput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
+	event.replaceOutput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
+
+	event.replaceInput({}, PB('honey_bucket'), C('honey_bucket'))
+	event.replaceOutput({}, PB('honey_bucket'), C('honey_bucket'))
+
 	//#endregion
 
 	//#endregion
