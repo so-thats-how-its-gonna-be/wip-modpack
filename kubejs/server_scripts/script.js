@@ -282,9 +282,18 @@ ServerEvents.recipes(event => {
 
 	//#endregion
 
+	//#region Upgrade removal
+
+	let pbUpgrades = ['anti_teleport', 'base', 'bee_sampler', 'breeding', 'comb_block', 'filter', 'not_babee', 'productivity', 'range', 'simulator', 'time']
+	pbUpgrades.forEach(upgrade => {
+		event.remove({output: PB(`upgrade_${upgrade}`)})
+	})
+
+	//#endregion
+
 	//#region Testing
 
-	pbCentrifuge(event, pbComb('test_bee'), [
+	pbCentrifuge(event, pbNbtItem('test_bee', 'comb'), [
 		honey(100),
 		itemChance(CA('festive_spool'), 0.01),
 		itemChance(F('#wax'), 0.5)
@@ -441,9 +450,9 @@ function pbBeeConversion(event, parent, result, item){
 
 function pbBeeProduce(event, bee, results){
 	event.custom({
-		type: PB('bee_produce'),
+		type: PB('advanced_beehive'),
 		ingredient: bee,
-		produce: formatMaterials(results)
+		results: formatMaterials(results)
 	})}
 
 function pbCentrifuge(event, item, outputs){
@@ -462,10 +471,17 @@ function pbBlockConversion(event, bee, block, result, chance){
 		to: {Name: result}
 	})}
 
-function pbComb(entity){
+function pbNbtItem(entity, item_type){
+	switch(item_type){
+		case 'honeycomb':
+		case 'comb':
+		case 'c':
+			item_type = 'configurable_honeycomb'
+			break
+	}
 	return {
 		type: F('nbt'),
-		item: PB('configurable_honeycomb'),
+		item: PB(item_type),
 		nbt: {
 			EntityTag: {
 				type: entity
