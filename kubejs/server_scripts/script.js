@@ -4,6 +4,7 @@
 let MOD = (mod, item, amount, chance) => `${amount ? `${amount}x ` : ''}${item.startsWith('#') ? '#' : ''}${mod}:${item.replace('#', '')}${chance ? ` ${chance}%`: ''}`
 
 let MC = (item, amount, chance) => MOD('minecraft', item, amount, chance)
+let P = (item, amount, chance) => MOD('pack', item, amount, chance)
 let F = (item, amount, chance) => MOD('forge', item, amount, chance)
 let C = (item, amount, chance) => MOD('create', item, amount, chance)
 let CA = (item, amount, chance) => MOD('alloyed', item, amount, chance)
@@ -291,6 +292,16 @@ ServerEvents.tags('item', event => {
 
 })
 
+ServerEvents.highPriorityData(event => {
+
+	//#region Productive bees
+
+	pbBeeEntry(event, 'test_bee', '#EE4B2B', '	#AAFF00', '#ffffff', MC('grass_block'))
+
+	//#endregion
+
+})
+
 //#region CGM compat
 function cgmWorkBench(event, result, materials){
     event.custom({
@@ -366,6 +377,26 @@ function fdCookingContainer(event, result, materials, xp, cookingTime, container
 //#endregion
 
 //#region Productive Bees compat
+
+function pbBeeEntry(event, fileName, colorMain, colorSecondary, colorParticle, flower, size){
+	if (flower.contains('#')){
+		event.addJson(P(PB(fileName)), {
+			primaryColor: colorMain,
+			secondaryColor: colorSecondary,
+			particleColor: colorParticle,
+			flowerTag: flower,
+			size: size
+		})
+	} else {
+		event.addJson(P(PB(fileName)), {
+			primaryColor: colorMain,
+			secondaryColor: colorSecondary,
+			particleColor: colorParticle,
+			flowerBlock: flower,
+			size: size
+		})
+	}
+}
 
 function pbBeeBreeding(event, parent1, parent2, results){
 	event.custom({
