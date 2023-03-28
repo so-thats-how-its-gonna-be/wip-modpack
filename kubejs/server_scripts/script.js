@@ -25,6 +25,9 @@ let PB = (item, amount, chance) => MOD('productivebees', item, amount, chance)
 //#endregion
 
 let cgmGuns = [CGM('pistol'), CGM('rifle'), CGM('shotgun'), CGM('heavy_rifle'), CGM('assault_rifle'), CGM('machine_pistol'), CGM('mini_gun'), CGM('bazooka'), CGM('grenade_launcher')]
+let honey = (amount) => Fluid.of(C('honey'), amount)
+
+let itemChance = (item, chance) => Item.of(item).withChance(chance)
 
 ServerEvents.recipes(event => {
 	
@@ -268,11 +271,24 @@ ServerEvents.recipes(event => {
 
 	//#region Compat
 
+	event.remove({mod: 'productivebees', type: C('mixing')})
+	event.remove({output: PB('milk_bottle')})
+
 	event.replaceInput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
 	event.replaceOutput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
 
 	event.replaceInput({}, PB('honey_bucket'), C('honey_bucket'))
 	event.replaceOutput({}, PB('honey_bucket'), C('honey_bucket'))
+
+	//#endregion
+
+	//#region Testing
+
+	pbCentrifuge(event, pbComb('test_bee'), [
+		honey(100),
+		itemChance(CA('festive_spool'), 0.01),
+		itemChance(F('#wax'), 0.5)
+	])
 
 	//#endregion
 
@@ -283,7 +299,12 @@ ServerEvents.recipes(event => {
 ServerEvents.tags('item', event => {
 	
 	//#region Unification fixes
+
 	event.remove(F('plates'), CRA('zinc_sheet'))
+
+	event.removeAllTagsFrom(PB('milk_bottle'))
+	event.get(F('bottles/milk')).add(PB('milk_bottle')).add(FD('milk_bottle'))
+
 	//#endregion
 
 	//#region Custom item tags
@@ -398,6 +419,10 @@ function pbBeeEntry(event, fileName, colorMain, colorSecondary, colorParticle, f
 	}
 }
 
+function pbBeeEntryAdvanced(event, fileName, json){
+	event.addJson(P(PB(fileName)), json)
+}
+
 function pbBeeBreeding(event, parent1, parent2, results){
 	event.custom({
 		type: PB('bee_breeding'),
@@ -418,15 +443,36 @@ function pbBeeProduce(event, bee, results){
 	event.custom({
 		type: PB('bee_produce'),
 		ingredient: bee,
-		produce: results
+		produce: formatMaterials(results)
 	})}
 
 function pbCentrifuge(event, item, outputs){
 	event.custom({
 		type: PB('centrifuge'),
 		ingredient: item,
-		outputs: outputs
+		outputs: formatMaterials(outputs)
 	})}
+
+function pbBlockConversion(event, bee, block, result, chance){
+	event.custom({
+		type: PB('block_conversion'),
+		bee: bee,
+		chance: chance ? chance * 100 : 100, // Chance input is a decimal, but the json expects a percentage
+		from: {Name: block},
+		to: {Name: result}
+	})}
+
+function pbComb(entity){
+	return {
+		type: F('nbt'),
+		item: PB('configurable_honeycomb'),
+		nbt: {
+			EntityTag: {
+				type: entity
+			}
+		}
+	}
+}
 
 //#endregion
 

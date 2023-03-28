@@ -31,7 +31,8 @@
     "forge:wires/{material}",
     "forge:storage_blocks/{material}",
     "forge:storage_blocks/raw_{material}",
-    "forge:buckets/{material}"
+    "forge:buckets/{material}",
+    "forge:bottles/{material}"
   ],
   "materials": [
     "aeternium",
@@ -82,7 +83,8 @@
     "tungsten",
     "uranium",
     "zinc",
-    "honey"
+    "honey",
+    "milk"
   ],
   "priorityOverrides": {},
   "ignoredTags": [],
