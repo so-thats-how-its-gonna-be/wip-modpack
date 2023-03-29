@@ -1,0 +1,9 @@
+{
+    "primaryColor": "#C98C52",
+    "secondaryColor": "#804f40",
+    "flowerTag": "forge:storage_blocks/bronze",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

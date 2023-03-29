@@ -1,0 +1,11 @@
+{
+    "primaryColor": "#fa9f98",
+    "secondaryColor": "#8a8a8a",
+    "particleColor": "#fa7d73",
+    "flowerFluid": "minecraft:water",
+    "waterproof": true,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

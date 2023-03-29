@@ -1,0 +1,12 @@
+{
+    "primaryColor": "#6FEAEF",
+    "secondaryColor": "#804f40",
+    "attributes": {
+        "endurance": 2
+    },
+    "flowerTag": "forge:storage_blocks/platinum",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

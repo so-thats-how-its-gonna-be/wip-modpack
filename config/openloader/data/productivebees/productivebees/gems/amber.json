@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#fa9310",
+    "secondaryColor": "#064f2c",
+    "tertiaryColor": "#d4700e",
+    "particleColor": "#fa9310",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/amber",
+    "size": 0.7,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

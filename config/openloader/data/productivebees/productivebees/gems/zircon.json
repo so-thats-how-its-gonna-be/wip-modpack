@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#787800",
+    "secondaryColor": "#2e0b17",
+    "tertiaryColor": "#b3b600",
+    "particleColor": "#787800",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/zircon",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

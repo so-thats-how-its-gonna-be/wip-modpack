@@ -1,0 +1,12 @@
+{
+    "primaryColor": "#d3d3d3",
+    "secondaryColor": "#535353",
+    "size": 0.7,
+    "attributes": {
+        "endurance": 0
+    },
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

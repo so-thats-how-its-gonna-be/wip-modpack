@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#a66ef4",
+    "secondaryColor": "#064f2c",
+    "tertiaryColor": "#3500aa",
+    "particleColor": "#a66ef4",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/tanzanite",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

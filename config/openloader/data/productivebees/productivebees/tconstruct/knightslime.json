@@ -1,0 +1,11 @@
+{
+    "primaryColor": "#c882f5",
+    "secondaryColor": "#804f40",
+    "particleColor": "#c882f5",
+    "description": "productivebees.ingredient.description.only_spawnegg",
+    "flowerTag": "forge:storage_blocks/knightslime",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

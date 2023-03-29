@@ -1,0 +1,12 @@
+{
+    "primaryColor": "#80d4d2",
+    "secondaryColor": "#2e5250",
+    "particleColor": "#80d4d2",
+    "beeTexture": "productivebees:textures/entity/bee/sky_slimy/bee",
+    "description": "productivebees.ingredient.description.only_spawnegg",
+    "renderer": "translucent_with_center",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

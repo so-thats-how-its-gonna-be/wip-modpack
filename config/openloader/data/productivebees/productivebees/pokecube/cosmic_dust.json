@@ -1,0 +1,11 @@
+{
+    "primaryColor": "#2394cc",
+    "secondaryColor": "#0f0f66",
+    "particleColor": "#2394cc",
+    "name": "Cosmic Bee",
+    "flowerTag": "forge:ores/cosmic",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

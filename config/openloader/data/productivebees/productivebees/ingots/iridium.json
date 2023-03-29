@@ -1,0 +1,12 @@
+{
+    "primaryColor": "#ffccff",
+    "secondaryColor": "#d4e4fc",
+    "particleColor": "#8c9fac",
+    "flowerTag": "forge:storage_blocks/iridium",
+    "description": "productivebees.ingredient.description.only_spawnegg",
+    "size": 0.8,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

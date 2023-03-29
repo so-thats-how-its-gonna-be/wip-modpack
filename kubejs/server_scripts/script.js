@@ -325,11 +325,9 @@ ServerEvents.tags('item', event => {
 
 })
 
-ServerEvents.highPriorityData(event => {
+ServerEvents.lowPriorityData(event => {
 
 	//#region Productive bees
-
-	pbBeeEntry(event, 'test_bee', '#EE4B2B', '	#AAFF00', '#ffffff', MC('grass_block'))
 
 	//#endregion
 
@@ -410,30 +408,6 @@ function fdCookingContainer(event, result, materials, xp, cookingTime, container
 //#endregion
 
 //#region Productive Bees compat
-
-function pbBeeEntry(event, fileName, colorMain, colorSecondary, colorParticle, flower, size){
-	if (flower.includes('#')){
-		event.addJson(path(P(PB(fileName))), {
-			primaryColor: colorMain,
-			secondaryColor: colorSecondary,
-			particleColor: colorParticle,
-			flowerTag: flower,
-			size: size
-		})
-	} else {
-		event.addJson(path(P(PB(fileName))), {
-			primaryColor: colorMain,
-			secondaryColor: colorSecondary,
-			particleColor: colorParticle,
-			flowerBlock: flower,
-			size: size
-		})
-	}
-}
-
-function pbBeeEntryAdvanced(event, fileName, json){
-	event.addJson(path(P(PB(fileName))), json)
-}
 
 function pbBeeBreeding(event, parent1, parent2, results){
 	event.custom({

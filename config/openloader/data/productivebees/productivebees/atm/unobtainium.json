@@ -1,0 +1,16 @@
+{
+    "primaryColor": "#bc2feb",
+    "secondaryColor": "#2e237b",
+    "flowerTag": "forge:storage_blocks/unobtainium",
+    "attributes": {
+        "endurance": 3
+    },
+    "selfbreed": false,
+    "invulnerability": [
+        "mekanism.radiation"
+    ],
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

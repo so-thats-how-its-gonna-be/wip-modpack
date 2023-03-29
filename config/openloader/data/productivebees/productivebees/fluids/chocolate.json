@@ -1,0 +1,10 @@
+{
+    "primaryColor": "#914139",
+    "secondaryColor": "#804f40",
+    "particleColor": "#914139",
+    "flowerBlock": "minecraft:cocoa",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

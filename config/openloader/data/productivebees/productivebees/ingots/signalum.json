@@ -1,0 +1,10 @@
+{
+    "primaryColor": "#e7917d",
+    "secondaryColor": "#804f40",
+    "particleColor": "#b56f60",
+    "flowerTag": "forge:storage_blocks/signalum",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

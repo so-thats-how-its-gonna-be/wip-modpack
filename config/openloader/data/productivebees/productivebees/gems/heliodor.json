@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#ddcf17",
+    "secondaryColor": "#064f2c",
+    "tertiaryColor": "#957b00",
+    "particleColor": "#ddcf17",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/heliodor",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

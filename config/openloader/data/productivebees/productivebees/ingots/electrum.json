@@ -1,0 +1,9 @@
+{
+    "primaryColor": "#D5BB4F",
+    "secondaryColor": "#804f40",
+    "flowerTag": "forge:storage_blocks/electrum",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

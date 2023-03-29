@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#cc3516",
+    "secondaryColor": "#064f2c",
+    "tertiaryColor": "#dd3b17",
+    "particleColor": "#cc3516",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/garnet",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

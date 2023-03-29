@@ -1,0 +1,10 @@
+{
+    "primaryColor": "#c44249",
+    "secondaryColor": "#470d2f",
+    "particleColor": "#df6d5c",
+    "flowerTag": "forge:storage_blocks/calorite",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

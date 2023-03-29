@@ -1,0 +1,10 @@
+{
+    "primaryColor": "#58a28b",
+    "secondaryColor": "#804f40",
+    "particleColor": "#437f6c",
+    "flowerTag": "forge:storage_blocks/enderium",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

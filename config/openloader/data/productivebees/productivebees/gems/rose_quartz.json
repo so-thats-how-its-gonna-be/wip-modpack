@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#ffbffb",
+    "secondaryColor": "#3e5b68",
+    "tertiaryColor": "#a63367",
+    "particleColor": "#ffbffb",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/rose_quartz",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

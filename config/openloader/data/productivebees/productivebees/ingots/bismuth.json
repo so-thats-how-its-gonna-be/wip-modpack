@@ -1,0 +1,10 @@
+{
+    "primaryColor": "#ece386",
+    "secondaryColor": "#586bb7",
+    "particleColor": "#b598db",
+    "flowerTag": "forge:storage_blocks/bismuth",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

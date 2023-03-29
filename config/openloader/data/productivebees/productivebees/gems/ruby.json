@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#c62415",
+    "secondaryColor": "#064f2c",
+    "tertiaryColor": "#7b000b",
+    "particleColor": "#c62415",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/ruby",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#ff732f",
+    "secondaryColor": "#3e5b68",
+    "tertiaryColor": "#dc1e4b",
+    "particleColor": "#ff732f",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/coral",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#8adb18",
+    "secondaryColor": "#064f2c",
+    "tertiaryColor": "#5d7b00",
+    "particleColor": "#8adb18",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/peridot",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

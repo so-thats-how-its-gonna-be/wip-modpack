@@ -1,0 +1,11 @@
+{
+    "primaryColor": "#00FF00",
+    "secondaryColor": "#008000",
+    "particleColor": "#7CFC00",
+    "size": 0.8,
+    "flowerTag": "forge:storage_blocks/uraninite",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "primaryColor": "#267049",
+    "secondaryColor": "#204c49",
+    "particleColor": "#267049",
+    "description": "productivebees.ingredient.description.only_spawnegg",
+    "flowerTag": "forge:storage_blocks/queens_slime",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#32e1f6",
+    "secondaryColor": "#3e5b68",
+    "tertiaryColor": "#28a0b1",
+    "particleColor": "#32e1f6",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/fluorite",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "primaryColor": "#F48702",
+    "secondaryColor": "#804f40",
+    "flowerTag": "productivebees:flowers/cupric_flowers",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

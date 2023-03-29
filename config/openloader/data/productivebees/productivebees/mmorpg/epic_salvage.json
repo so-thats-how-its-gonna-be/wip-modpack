@@ -1,0 +1,11 @@
+{
+    "primaryColor": "#af1281",
+    "secondaryColor": "#610057",
+    "particleColor": "#caacbe",
+    "selfbreed": false,
+    "flowerBlock": "mmorpg:ore_block3",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

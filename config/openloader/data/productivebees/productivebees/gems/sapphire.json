@@ -1,0 +1,13 @@
+{
+    "primaryColor": "#5241f3",
+    "secondaryColor": "#064f2c",
+    "tertiaryColor": "#000b7b",
+    "particleColor": "#5241f3",
+    "renderer": "default_crystal",
+    "flowerTag": "productivebees:flowers/sapphire",
+    "size": 0.6,
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}

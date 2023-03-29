@@ -1,0 +1,9 @@
+{
+    "primaryColor": "#677193",
+    "secondaryColor": "#804f40",
+    "flowerTag": "forge:storage_blocks/lead",
+    "conditions": {
+        "type": "forge:mod_loaded",
+        "modid": "fake_mod_fakey_fakerson"
+    }
+}
