@@ -16,7 +16,6 @@
 /downloads
 *.bak
 /.mcattributes
-/kubejs/exported
 /journeymap/icon/
 minecraftinstance.json
 /config/spark/

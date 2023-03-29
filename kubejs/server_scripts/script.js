@@ -333,6 +333,18 @@ ServerEvents.tags('item', event => {
 
 })
 
+ServerEvents.highPriorityData(event => {
+	
+	pbRegisterBee(event, 'test', {
+		primaryColor: '#AAFF00',
+		secondaryColor: '#EE4B2B',
+		particleColor: '#ffffff',
+		flowerBlock: CRA('connector'),
+		size: 2
+	})
+
+})
+
 //#region CGM compat
 function cgmWorkBench(event, result, materials){
     event.custom({
@@ -447,6 +459,10 @@ function pbBlockConversion(event, bee, block, result, chance){
 		from: {Name: block},
 		to: {Name: result}
 	})}
+
+function pbRegisterBee(event, name, json){
+	event.addJson(KJS(`productivebees/${name}`), json)
+}
 
 function pbNbtItem(entity, item_type){
 	switch(item_type){
