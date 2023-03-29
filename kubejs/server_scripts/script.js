@@ -25,7 +25,7 @@ let PB = (item, amount, chance) => MOD('productivebees', item, amount, chance)
 //#endregion
 
 let cgmGuns = [CGM('pistol'), CGM('rifle'), CGM('shotgun'), CGM('heavy_rifle'), CGM('assault_rifle'), CGM('machine_pistol'), CGM('mini_gun'), CGM('bazooka'), CGM('grenade_launcher')]
-let honey = (amount) => Fluid.of(C('honey'), amount)
+let honey = (amount) => amount ? Fluid.of(C('honey'), amount) : Fluid.of(C('honey'))
 
 let itemChance = (item, chance) => Item.of(item).withChance(chance)
 
@@ -296,11 +296,19 @@ ServerEvents.recipes(event => {
 
 	//#region Testing
 
-	pbCentrifuge(event, pbNbtItem('test_bee', 'comb'), [
+	pbCentrifuge(event, pbNbtItem('test', 'comb'), [
 		honey(100),
-		itemChance(CA('festive_spool'), 0.01),
-		itemChance(F('#wax'), 0.5)
+		itemChance(F('#wax'), 0.5),
+		itemChance(CA('festive_spool'), 0.05)
 	])
+
+	event.recipe.createMixing(event, pbNbtItem('test', 'comb'), [
+		honey(50),
+		itemChance(F('#wax'), 0.3),
+		itemChance(CA('festive_spool'), 0.01)
+	]).heated()
+
+	pbBeeProduce(event, 'test', [pbNbtItem('test', 'comb')])
 
 	//#endregion
 
@@ -321,14 +329,6 @@ ServerEvents.tags('item', event => {
 
 	//#region Custom item tags
 	event.get(F('filter_base_materials')).add(MC('paper')).add(FD('canvas'))
-	//#endregion
-
-})
-
-ServerEvents.lowPriorityData(event => {
-
-	//#region Productive bees
-
 	//#endregion
 
 })

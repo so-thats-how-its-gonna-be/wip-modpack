@@ -1,9 +1,0 @@
-{
-    "primaryColor": "#E9EBE7",
-    "secondaryColor": "#804f40",
-    "flowerTag": "forge:storage_blocks/zinc",
-    "conditions": {
-        "type": "forge:mod_loaded",
-        "modid": "fake_mod_fakey_fakerson"
-    }
-}
