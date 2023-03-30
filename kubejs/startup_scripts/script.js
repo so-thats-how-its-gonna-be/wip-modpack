@@ -27,6 +27,14 @@ StartupEvents.registry('item', event => {
 	item('legal_gun_parts', sequenced=true, maxStackSize=16)
 	item('illegal_gun_parts', sequenced=true, maxStackSize=16)
 
+	item('gun_handle', sequenced=true)
+
+	item('gun_barrel_basic', displayName='Basic Gun Barrel')
+	item('gun_barrel_advanced', displayName='Advanced Gun Barrel')
+
+	item('gun_chamber_basic', displayName='Gun Chamber', sequenced=true)
+	item('gun_chamber_rotating', displayName='Revolving Gun Chamber', sequenced=true)
+
 	item('filter_base', displayName='Air Filter (Base)')
 	item('ultrafine_filter_base', displayName='Ultrafine Air Filter (Base)')
 
@@ -38,10 +46,6 @@ StartupEvents.registry('item', event => {
 		item(`dirty_ultrafine_filter_${pollutant}`, displayName=`Dirty Ultrafine Air Filter (${capitalize(pollutant)})`)
 	})
 
-	item('gun_handle', sequenced=true)
-
-	item('gun_barrel_basic', displayName='Basic Gun Barrel')
-	item('gun_barrel_advanced', displayName='Advanced Gun Barrel')
 })
 
 StartupEvents.registry('block', event => {
