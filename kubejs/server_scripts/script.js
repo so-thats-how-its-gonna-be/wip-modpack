@@ -270,12 +270,12 @@ ServerEvents.recipes(event => {
 	]).damageIngredient(Item.of(C('sand_paper')))
 
 	itemsa = KJS('unfinished_gun_handle')
-	event.recipes.sequencedAssembly( 
+	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('gun_handle')) ], 
 		F('#ingots/steel'), 
 		[
 			event.recipes.createDeploying(itemsa, [itemsa, F('#rods/iron')]),
-			event.recipes.createSandPaperPolishing(itemsa, [itemsa])
+			event.recipes.createFilling(itemsa, [itemsa, Fluid.of(CA('seed_oil'), 100)])
 		]).transitionalItem(itemsa)
 
 	event.shaped(KJS('gun_barrel_basic'), [
@@ -315,7 +315,7 @@ ServerEvents.recipes(event => {
 		]).transitionalItem(itemsa).loops(12)
 
 	itemsa = KJS('unfinished_legal_gun_parts')
-	event.recipes.sequencedAssembly(
+	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('legal_gun_parts')) ],
 		F('#plates/steel'), [
 			event.recipes.createCutting(itemsa, [itemsa]).processingTime(50),
@@ -324,7 +324,7 @@ ServerEvents.recipes(event => {
 		]).transitionalItem(itemsa).loops(5)
 
 	itemsa = KJS('unfinished_illegal_gun_parts')
-	event.recipes.sequencedAssembly(
+	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('illegal_gun_parts')) ],
 		KJS('legal_gun_parts'), [
 			event.recipes.createCutting(itemsa, [itemsa]).processingTime(100),

@@ -2,13 +2,21 @@
 
 StartupEvents.registry('item', event => {
 
-	let item = (id, sequenced=false, group='kubejs', displayName=null, maxStackSize=64, texture=null, unfinishedTexture=null, glow=false) => {
+	function item ( id, sequenced, group, displayName, maxStackSize, texture, unfinishedTexture, glow ) {
+
+		sequenced = sequenced ? sequenced : false
+		group = group ? group : 'kubejs'
+		maxStackSize = maxStackSize ? maxStackSize : 64
+		glow = glow ? glow : false
+		texture = texture ? texture : `kubejs:item/${id}`
+		unfinishedTexture = unfinishedTexture ? unfinishedTexture : `kubejs:item/unfinished_${id}`
+		displayName = displayName ? displayName : capitalize(id.replace(/_/g, ' '))
 
 		event.create(id)
-		.displayName(displayName ? displayName : capitalize(id.replace(/_/g, ' ')))
+		.displayName(displayName)
 		.group(group)
 		.maxStackSize(maxStackSize)
-		.texture(texture ? texture : `kubejs:item/${id}`)
+		.texture(texture)
 		.glow(glow)
 
 		if (!sequenced) {
@@ -16,34 +24,36 @@ StartupEvents.registry('item', event => {
 		}
 
 		event.create(`unfinished_${id}`, 'create:sequenced_assembly')
-		.displayName(`Unfinished ${displayName ? displayName : capitalize(id.replace(/_/g, ' '))}`)
+		.displayName(`Unfinished ${displayName}`)
 		.group(group)
 		.maxStackSize(maxStackSize)
-		.texture(unfinishedTexture ? unfinishedTexture : `kubejs:item/unfinished_${id}`)
+		.texture(unfinishedTexture)
 		.glow(glow)
 
 	}
 
-	item('legal_gun_parts', sequenced=true, maxStackSize=16)
-	item('illegal_gun_parts', sequenced=true, maxStackSize=16)
+	item('legal_gun_parts', true, null, null, 16)
+	item('illegal_gun_parts', true, null, null, 16)
 
-	item('gun_handle', sequenced=true)
+	item('gun_handle', true)
 
-	item('gun_barrel_basic', displayName='Basic Gun Barrel')
-	item('gun_barrel_advanced', displayName='Advanced Gun Barrel')
+	item('gun_barrel_basic', false, null, 'Basic Gun Barrel')
+	item('gun_barrel_advanced', false, null, 'Advanced Gun Barrel')
 
-	item('gun_chamber_basic', displayName='Gun Chamber', sequenced=true)
-	item('gun_chamber_rotating', displayName='Revolving Gun Chamber', sequenced=true)
+	item('gun_chamber_basic', true, null, 'Gun Chamber')
+	item('gun_chamber_rotating', true, null, 'Revolving Gun Chamber')
 
-	item('filter_base', displayName='Air Filter (Base)')
-	item('ultrafine_filter_base', displayName='Ultrafine Air Filter (Base)')
+	item('filter_base', false, null, 'Air Filter (Base)')
+	item('ultrafine_filter_base', false, null, 'Ultrafine Air Filter (Base)')
 
-	['carbon', 'dust', 'sulfur'].forEach(pollutant => {
-		item(`filter_${pollutant}`, displayName=`Air Filter (${capitalize(pollutant)})`)
-		item(`ultrafilter_${pollutant}`, displayName=`Ultrafine Air Filter (${capitalize(pollutant)})`)
+	var pollutants = ['carbon', 'dust', 'sulfur']
 
-		item(`dirty_filter_${pollutant}`, displayName=`Dirty Air Filter (${capitalize(pollutant)})`)
-		item(`dirty_ultrafine_filter_${pollutant}`, displayName=`Dirty Ultrafine Air Filter (${capitalize(pollutant)})`)
+	pollutants.forEach(pollutant => {
+		item(`filter_${pollutant}`, false, null, `Air Filter (${capitalize(pollutant)})`)
+		item(`ultrafilter_${pollutant}`, false, null, `Ultrafine Air Filter (${capitalize(pollutant)})`)
+
+		item(`dirty_filter_${pollutant}`, false, null, `Dirty Air Filter (${capitalize(pollutant)})`)
+		item(`dirty_ultrafine_filter_${pollutant}`, false, null, `Dirty Ultrafine Air Filter (${capitalize(pollutant)})`)
 	})
 
 })
