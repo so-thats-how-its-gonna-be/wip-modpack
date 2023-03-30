@@ -187,6 +187,8 @@ ServerEvents.recipes(event => {
 		F('#dyes/red')
 	])
 
+	//#endregion
+
 	//#region Grenade recipes
 
 	event.shapeless(CGM('grenade'), [
@@ -265,6 +267,46 @@ ServerEvents.recipes(event => {
 		C('sand_paper')
 	]).damageIngredient(Item.of(C('sand_paper')))
 
+	event.recipes.sequencedAssembly( 
+		[ Item.of(KJS('gun_handle')) ], 
+		F('#ingots/steel'), 
+		[
+			event.recipes.createDeploying(KJS('unfinished_gun_handle'), [('unfinished_gun_handle'), F('#rods/iron')]),
+			event.recipes.createSandPaperPolishing(KJS('unfinished_gun_handle'), [('unfinished_gun_handle')])
+		]).transitionalItem(KJS('unfinished_gun_handle'))
+
+	event.shaped(KJS('gun_barrel_basic'), [
+		'SSR'
+	], {
+		S: F('#ingots/steel'),
+		R: F('#rods/iron')
+	})
+
+	event.recipes.mechanicalCrafting(KJS('gun_barrel_advanced'), [
+		'SSRRB'
+	], {
+		S: F('#ingots/steel'),
+		R: F('#rods/iron'),
+		B: KJS('gun_barrel_basic')
+	})
+
+	event.recipes.sequencedAssembly(
+		[ Item.of(KJS('legal_gun_parts')) ],
+		F('#plates/steel'), [
+			event.recipes.createCutting('unfinished_legal_gun_parts', [KJS('unfinished_legal_gun_parts')]).processingTime(50),
+			event.recipes.createDeploying(KJS('unfinished_legal_gun_parts'), [KJS('unfinished_legal_gun_parts'), F('#nuggets/iron')]),
+			event.recipes.createPressing(KJS('unfinished_legal_gun_parts'), [KJS('unfinished_legal_gun_parts')])
+		]).transitionalItem(KJS('unfinished_legal_gun_parts')).loops(5)
+
+	event.recipes.sequencedAssembly(
+		[ Item.of(KJS('illegal_gun_parts')) ],
+		KJS('legal_gun_parts'), [
+			event.recipes.createCutting('unfinished_illegal_gun_parts', [KJS('unfinished_illegal_gun_parts')]).processingTime(100),
+			event.recipes.createDeploying(KJS('unfinished_illegal_gun_parts'), [KJS('unfinished_illegal_gun_parts'), F('#ingots/iron')]),
+			event.recipes.createPressing(KJS('unfinished_illegal_gun_parts'), [KJS('unfinished_illegal_gun_parts')]),
+			event.recipes.createDeploying(KJS('unfinished_illegal_gun_parts'), [KJS('unfinished_illegal_gun_parts'), F('#rods/iron')])
+		]).transitionalItem(KJS('unfinished_illegal_gun_parts')).loops(5)
+
 	//#endregion
 
 	//#endregion
@@ -340,7 +382,7 @@ ServerEvents.highPriorityData(event => {
 		secondaryColor: '#EE4B2B',
 		particleColor: '#ffffff',
 		flowerBlock: CRA('connector'),
-		size: 2
+		size: 1.0
 	})
 
 })
@@ -477,7 +519,7 @@ function pbNbtItem(entity, item_type){
 		item: PB(item_type),
 		nbt: {
 			EntityTag: {
-				type: entity
+				type: PB(entity)
 			}
 		}
 	}
