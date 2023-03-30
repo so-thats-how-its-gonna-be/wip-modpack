@@ -1,0 +1,85 @@
+To refresh this file, delete it and run /reload command again! Last updated: Mar 21, 2023, 6:15:14 PM
+
+#forge:crude_oil
+
+#minecraft:water
+- minecraft:water (from Default)
+- minecraft:flowing_water (from Default)
+- create_things_and_misc:slime (from create_misc_and_things_1.19.2_2.0.jar)
+- create_things_and_misc:flowing_slime (from create_misc_and_things_1.19.2_2.0.jar)
+- adpother:polluted_water_flowing (from AdPother-1.19.2-7.0.9.0-build.0803.jar)
+- adpother:polluted_water_still (from AdPother-1.19.2-7.0.9.0-build.0803.jar)
+- sliceanddice:flowing_fertilizer (from sliceanddice-2.0.3.jar)
+- sliceanddice:fertilizer (from sliceanddice-2.0.3.jar)
+- createaddition:flowing_seed_oil (from createaddition-1.19.2-20230315b.jar)
+- createaddition:seed_oil (from createaddition-1.19.2-20230315b.jar)
+
+#forge:molten_bronze
+- createbigcannons:flowing_molten_bronze (from createbigcannons-1.19.2-beta-0.5.b.jar)
+- createbigcannons:molten_bronze (from createbigcannons-1.19.2-beta-0.5.b.jar)
+
+#forge:biodiesel
+- car:bio_diesel? (from AdPother-1.19.2-7.0.9.0-build.0803.jar)
+
+#forge:milk
+- minecraft:milk? (from forge-1.19.2-43.2.7-universal.jar)
+- minecraft:flowing_milk? (from forge-1.19.2-43.2.7-universal.jar)
+
+#forge:tea
+- create:flowing_tea (from create-1.19.2-0.5.0.i.jar)
+- create:tea (from create-1.19.2-0.5.0.i.jar)
+
+#forge:molten_cast_iron
+- createbigcannons:flowing_molten_cast_iron (from createbigcannons-1.19.2-beta-0.5.b.jar)
+- createbigcannons:molten_cast_iron (from createbigcannons-1.19.2-beta-0.5.b.jar)
+
+#sliceanddice:moisturizing
+- minecraft:water (from sliceanddice-2.0.3.jar)
+
+#forge:biofuel
+- ic2:bio_fuel? (from AdPother-1.19.2-7.0.9.0-build.0803.jar)
+- createaddition:flowing_bioethanol (from createaddition-1.19.2-20230315b.jar)
+- createaddition:bioethanol (from createaddition-1.19.2-20230315b.jar)
+
+#forge:molten_steel
+- createbigcannons:flowing_molten_steel (from createbigcannons-1.19.2-beta-0.5.b.jar)
+- createbigcannons:molten_steel (from createbigcannons-1.19.2-beta-0.5.b.jar)
+
+#forge:plantoil
+- createaddition:flowing_seed_oil (from createaddition-1.19.2-20230315b.jar)
+- createaddition:seed_oil (from createaddition-1.19.2-20230315b.jar)
+
+#minecraft:lava
+- minecraft:lava (from Default)
+- minecraft:flowing_lava (from Default)
+
+#biomesoplenty:blood
+- biomesoplenty:blood (from BiomesOPlenty-1.19.2-17.1.1.162.jar)
+- biomesoplenty:flowing_blood (from BiomesOPlenty-1.19.2-17.1.1.162.jar)
+
+#sliceanddice:fertilizer
+- sliceanddice:flowing_fertilizer (from sliceanddice-2.0.3.jar)
+- sliceanddice:fertilizer (from sliceanddice-2.0.3.jar)
+
+#create:bottomless/deny
+
+#forge:chocolate
+- create:flowing_chocolate (from create-1.19.2-0.5.0.i.jar)
+- create:chocolate (from create-1.19.2-0.5.0.i.jar)
+
+#create:bottomless/allow
+- minecraft:water (from create-1.19.2-0.5.0.i.jar)
+- minecraft:lava (from create-1.19.2-0.5.0.i.jar)
+
+#forge:honey
+- create:flowing_honey (from create-1.19.2-0.5.0.i.jar)
+- create:honey (from create-1.19.2-0.5.0.i.jar)
+
+#forge:creosote
+
+#forge:polluted_water
+- adpother:polluted_water_flowing (from AdPother-1.19.2-7.0.9.0-build.0803.jar)
+- adpother:polluted_water_still (from AdPother-1.19.2-7.0.9.0-build.0803.jar)
+
+#sliceanddice:burning
+- minecraft:lava (from sliceanddice-2.0.3.jar)

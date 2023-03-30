@@ -302,7 +302,7 @@ ServerEvents.recipes(event => {
 		itemChance(CA('festive_spool'), 0.05)
 	])
 
-	event.recipe.createMixing(event, pbNbtItem('test', 'comb'), [
+	event.recipes.createMixing([pbNbtItem('test', 'comb')], [
 		honey(50),
 		itemChance(F('#wax'), 0.3),
 		itemChance(CA('festive_spool'), 0.01)
