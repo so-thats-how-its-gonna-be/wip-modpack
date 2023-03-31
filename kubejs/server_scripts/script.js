@@ -267,16 +267,16 @@ ServerEvents.recipes(event => {
 		C('sand_paper')
 	]).damageIngredient(Item.of(C('sand_paper')))
 
-	var itemsa = MC('stone')
+	var tItem = MC('stone')
 
-	itemsa = KJS('unfinished_gun_handle')
+	tItem = KJS('unfinished_gun_handle')
 	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('gun_handle')) ], 
 		F('#ingots/steel'), 
 		[
-			event.recipes.createDeploying(itemsa, [itemsa, F('#rods/iron')]),
-			event.recipes.createFilling(itemsa, [itemsa, Fluid.of(CA('seed_oil'), 100)])
-		]).transitionalItem(itemsa).loops(1)
+			event.recipes.createDeploying(tItem, [tItem, F('#rods/iron')]),
+			event.recipes.createFilling(tItem, [tItem, Fluid.of(CA('seed_oil'), 100)])
+		]).transitionalItem(tItem).loops(1)
 
 	event.shaped(KJS('gun_barrel_basic'), [
 		'SSR'
@@ -293,45 +293,45 @@ ServerEvents.recipes(event => {
 		B: KJS('gun_barrel_basic')
 	})
 
-	itemsa = KJS('unfinished_gun_chamber_basic')
+	tItem = KJS('unfinished_gun_chamber_basic')
 	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('gun_chamber_basic')) ],
 		F('#ingots/steel'), [
-			event.recipes.createPressing(itemsa, [itemsa]),
-			event.recipes.createPressing(itemsa, [itemsa]),
-			event.recipes.createCutting(itemsa, [itemsa]),
-			event.recipes.createSplashing([itemsa], [itemsa])
-		]).transitionalItem(itemsa).loops(4)
+			event.recipes.createPressing(tItem, [tItem]),
+			event.recipes.createPressing(tItem, [tItem]),
+			event.recipes.createCutting(tItem, [tItem]),
+			event.recipes.createSplashing([tItem], [tItem])
+		]).transitionalItem(tItem).loops(4)
 
-	itemsa = KJS('unfinished_gun_chamber_rotating')
+	tItem = KJS('unfinished_gun_chamber_rotating')
 	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('gun_chamber_rotating')) ],
 		KJS('gun_chamber_basic'), [
-			event.recipes.createPressing(itemsa, [itemsa]),
-			event.recipes.createDeploying(itemsa, [itemsa, F('#dusts/obsidian')]),
-			event.recipes.createPressing(itemsa, [itemsa]),
-			event.recipes.createCutting(itemsa, [itemsa]),
-			event.recipes.createSplashing([itemsa], [itemsa])
-		]).transitionalItem(itemsa).loops(12)
+			event.recipes.createPressing(tItem, [tItem]),
+			event.recipes.createDeploying(tItem, [tItem, F('#dusts/obsidian')]),
+			event.recipes.createPressing(tItem, [tItem]),
+			event.recipes.createCutting(tItem, [tItem]),
+			event.recipes.createSplashing([tItem], [tItem])
+		]).transitionalItem(tItem).loops(12)
 
-	itemsa = KJS('unfinished_legal_gun_parts')
+	tItem = KJS('unfinished_legal_gun_parts')
 	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('legal_gun_parts')) ],
 		F('#plates/steel'), [
-			event.recipes.createCutting(itemsa, [itemsa]).processingTime(50),
-			event.recipes.createDeploying(itemsa, [itemsa, F('#nuggets/iron')]),
-			event.recipes.createPressing(itemsa, [itemsa])
-		]).transitionalItem(itemsa).loops(5)
+			event.recipes.createCutting(tItem, [tItem]).processingTime(50),
+			event.recipes.createDeploying(tItem, [tItem, F('#nuggets/iron')]),
+			event.recipes.createPressing(tItem, [tItem])
+		]).transitionalItem(tItem).loops(5)
 
-	itemsa = KJS('unfinished_illegal_gun_parts')
+	tItem = KJS('unfinished_illegal_gun_parts')
 	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('illegal_gun_parts')) ],
 		KJS('legal_gun_parts'), [
-			event.recipes.createCutting(itemsa, [itemsa]).processingTime(100),
-			event.recipes.createDeploying(itemsa, [itemsa, F('#ingots/iron')]),
-			event.recipes.createPressing(itemsa, [itemsa]),
-			event.recipes.createDeploying(itemsa, [itemsa, F('#rods/iron')])
-		]).transitionalItem(itemsa).loops(5)
+			event.recipes.createCutting(tItem, [tItem]).processingTime(100),
+			event.recipes.createDeploying(tItem, [tItem, F('#ingots/iron')]),
+			event.recipes.createPressing(tItem, [tItem]),
+			event.recipes.createDeploying(tItem, [tItem, F('#rods/iron')])
+		]).transitionalItem(tItem).loops(5)
 
 	//#endregion
 
