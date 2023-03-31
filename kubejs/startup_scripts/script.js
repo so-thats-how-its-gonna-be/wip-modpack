@@ -50,7 +50,7 @@ StartupEvents.registry('item', event => {
 
 	pollutants.forEach(pollutant => {
 		item(`filter_${pollutant}`, false, null, `Air Filter (${capitalize(pollutant)})`)
-		item(`ultrafilter_${pollutant}`, false, null, `Ultrafine Air Filter (${capitalize(pollutant)})`)
+		item(`ultrafine_filter_${pollutant}`, false, null, `Ultrafine Air Filter (${capitalize(pollutant)})`)
 
 		item(`dirty_filter_${pollutant}`, false, null, `Dirty Air Filter (${capitalize(pollutant)})`)
 		item(`dirty_ultrafine_filter_${pollutant}`, false, null, `Dirty Ultrafine Air Filter (${capitalize(pollutant)})`)

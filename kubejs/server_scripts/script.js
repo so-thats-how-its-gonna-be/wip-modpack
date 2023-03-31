@@ -31,8 +31,6 @@ let itemChance = (item, chance) => Item.of(item).withChance(chance)
 
 let path = (location) => location.replace(/:/g, '/')
 
-var itemsa = 'minecraft:stone'
-
 ServerEvents.recipes(event => {
 	
 	//#region Automation recipes
@@ -269,6 +267,8 @@ ServerEvents.recipes(event => {
 		C('sand_paper')
 	]).damageIngredient(Item.of(C('sand_paper')))
 
+	var itemsa = MC('stone')
+
 	itemsa = KJS('unfinished_gun_handle')
 	event.recipes.createSequencedAssembly(
 		[ Item.of(KJS('gun_handle')) ], 
@@ -276,7 +276,7 @@ ServerEvents.recipes(event => {
 		[
 			event.recipes.createDeploying(itemsa, [itemsa, F('#rods/iron')]),
 			event.recipes.createFilling(itemsa, [itemsa, Fluid.of(CA('seed_oil'), 100)])
-		]).transitionalItem(itemsa)
+		]).transitionalItem(itemsa).loops(1)
 
 	event.shaped(KJS('gun_barrel_basic'), [
 		'SSR'
