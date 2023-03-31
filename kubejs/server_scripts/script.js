@@ -275,7 +275,7 @@ ServerEvents.recipes(event => {
 		F('#ingots/steel'), 
 		[
 			event.recipes.createDeploying(tItem, [tItem, F('#rods/iron')]),
-			event.recipes.createFilling(tItem, [tItem, Fluid.of(CA('seed_oil'), 100)])
+			event.recipes.createFilling(tItem, [tItem, Fluid.of(CRA('seed_oil'), 100)])
 		]).transitionalItem(tItem).loops(1)
 
 	event.shaped(KJS('gun_barrel_basic'), [
