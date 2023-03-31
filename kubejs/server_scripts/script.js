@@ -7,7 +7,7 @@ let MC = (item, amount, chance) => MOD('minecraft', item, amount, chance)
 let P = (item, amount, chance) => MOD('pack', item, amount, chance)
 let F = (item, amount, chance) => MOD('forge', item, amount, chance)
 let C = (item, amount, chance) => MOD('create', item, amount, chance)
-let CA = (item, amount, chance) => MOD('alloyed', item, amount, chance)
+let A = (item, amount, chance) => MOD('alloyed', item, amount, chance)
 let KJS = (item, amount, chance) => MOD('kubejs', item, amount, chance)
 let FD = (item, amount, chance) => MOD('farmersdelight', item, amount, chance)
 let AM = (item, amount, chance) => MOD('alexsmobs', item, amount, chance)
@@ -17,7 +17,7 @@ let FR = (item, amount, chance) => MOD('farmersrespite', item, amount, chance)
 let ND = (item, amount, chance) => MOD('nethersdelight', item, amount, chance)
 let BOP = (item, amount, chance) => MOD('biomesoplenty', item, amount, chance)
 let SPM = (item, amount, chance) => MOD('sulfurpotassiummod', item, amount, chance)
-let CRA = (item, amount, chance) => MOD('createaddition', item, amount, chance)
+let CA = (item, amount, chance) => MOD('createaddition', item, amount, chance)
 let CBC = (item, amount, chance) => MOD('createbigcannons', item, amount, chance)
 let POTR = (item, amount, chance) => MOD('adpother', item, amount, chance)
 let AC = (item, amount, chance) => MOD('adchimneys', item, amount, chance)
@@ -275,7 +275,7 @@ ServerEvents.recipes(event => {
 		F('#ingots/steel'), 
 		[
 			event.recipes.createDeploying(tItem, [tItem, F('#rods/iron')]),
-			event.recipes.createFilling(tItem, [tItem, Fluid.of(CRA('seed_oil'), 100)])
+			event.recipes.createFilling(tItem, [tItem, Fluid.of(CA('seed_oil'), 100)])
 		]).transitionalItem(tItem).loops(1)
 
 	event.shaped(KJS('gun_barrel_basic'), [
@@ -299,8 +299,7 @@ ServerEvents.recipes(event => {
 		F('#ingots/steel'), [
 			event.recipes.createPressing(tItem, [tItem]),
 			event.recipes.createPressing(tItem, [tItem]),
-			event.recipes.createCutting(tItem, [tItem]),
-			event.recipes.createSplashing([tItem], [tItem])
+			event.recipes.createCutting(tItem, [tItem])
 		]).transitionalItem(tItem).loops(4)
 
 	tItem = KJS('unfinished_gun_chamber_rotating')
@@ -310,8 +309,7 @@ ServerEvents.recipes(event => {
 			event.recipes.createPressing(tItem, [tItem]),
 			event.recipes.createDeploying(tItem, [tItem, F('#dusts/obsidian')]),
 			event.recipes.createPressing(tItem, [tItem]),
-			event.recipes.createCutting(tItem, [tItem]),
-			event.recipes.createSplashing([tItem], [tItem])
+			event.recipes.createCutting(tItem, [tItem])
 		]).transitionalItem(tItem).loops(12)
 
 	tItem = KJS('unfinished_legal_gun_parts')
@@ -388,7 +386,7 @@ ServerEvents.tags('item', event => {
 	
 	//#region Unification fixes
 
-	event.remove(F('plates'), CRA('zinc_sheet'))
+	event.remove(F('plates'), CA('zinc_sheet'))
 
 	event.removeAllTagsFrom(PB('milk_bottle'))
 	event.get(F('bottles/milk')).add(PB('milk_bottle')).add(FD('milk_bottle'))
@@ -407,7 +405,7 @@ ServerEvents.highPriorityData(event => {
 		primaryColor: '#AAFF00',
 		secondaryColor: '#EE4B2B',
 		particleColor: '#ffffff',
-		flowerBlock: CRA('connector'),
+		flowerBlock: CA('connector'),
 		size: 1.0
 	})
 
