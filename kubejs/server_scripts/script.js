@@ -27,7 +27,7 @@ let PB = (item, amount, chance) => MOD('productivebees', item, amount, chance)
 let cgmGuns = [CGM('pistol'), CGM('rifle'), CGM('shotgun'), CGM('heavy_rifle'), CGM('assault_rifle'), CGM('machine_pistol'), CGM('mini_gun'), CGM('bazooka'), CGM('grenade_launcher')]
 let honey = (amount) => amount ? Fluid.of(C('honey'), amount) : Fluid.of(C('honey'))
 
-let itemChance = (item, chance) => Item.of(item).withChance(chance)
+let itemChance = (item, chance) => Item.of(item).withChance(chance).toJson()
 
 let path = (location) => location.replace(/:/g, '/')
 
@@ -340,6 +340,7 @@ ServerEvents.recipes(event => {
 	//#region Compat
 
 	event.remove({mod: 'productivebees', type: C('mixing')})
+	event.remove({mod: 'productivebees', type: PB('centrifuge')})
 	event.remove({output: PB('milk_bottle')})
 
 	event.replaceInput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
@@ -362,21 +363,17 @@ ServerEvents.recipes(event => {
 
 	//#region Testing
 
-	pbCentrifuge(event, pbNbtItem(KJS('test'), 'comb'), [
-		honey(100),
-		itemChance(F('#wax'), 0.5),
-		itemChance(CA('festive_spool'), 0.05)
-	])
-
 	event.recipes.createMixing([
 		honey(50),
 		Item.of(F('#wax')).withChance(0.3),
 		Item.of(CA('festive_spool')).withChance(0.01)
 	], [
-		pbNbtItem(KJS('test'), 'comb')
+		pbNbtItem(KJS('test'), 'comb', 1, true)
 	]).heated()
 
-	pbBeeProduce(event, KJS('test'), [pbNbtItem(KJS('test'), 'comb')])
+	pbBeeProduce(event, KJS('test'), [
+		pbNbtItem(KJS('test'), 'comb', 1, true)
+	])
 
 	//#endregion
 
@@ -532,19 +529,37 @@ function pbRegisterBee(event, name, json){
 	event.addJson(KJS(`productivebees/${name}`), json)
 }
 
-function pbNbtItem(entity, item_type, amount){
+function pbNbtItem(entity, item_type, amount, create){
 
 	amount = amount ? amount : 1
+
+	create = create ? create : true
 
 	switch(item_type){
 		case 'honeycomb':
 		case 'comb':
 		case 'c':
-			item_type = 'configurable_honeycomb'
+			item_type = PB('configurable_honeycomb')
 			break
 	}
 
-	return Item.of((item_type), amount, '{EntityTag:{type:"kubejs:test"}}')
+	if (create){
+		return {
+			type: F('nbt'),
+			item: item_type,
+			nbt: `{EntityTag:{type:"${entity}"}}`
+		}
+	} else {
+		return {
+			item: {
+				type: F('nbt'),
+				item: item_type,
+				nbt: `{EntityTag:{type:"${entity}"}}`
+			}
+		}
+	}
+
+	//return Item.of((item_type), amount, `{EntityTag:{type:"${entity}"}}`)
 
 }
 
@@ -615,7 +630,15 @@ function fluidTagJson(tag, amount){
 	}
 }
 
-function fluidJson(fluid, amount){
+function fluidJson(fluid, amount, stupid){
+	if (stupid){
+		return {
+			fluid: {
+				fluid: fluid
+			},
+			amount: amount
+		}
+	}
 	return {
 		fluid: fluid,
 		amount: amount
