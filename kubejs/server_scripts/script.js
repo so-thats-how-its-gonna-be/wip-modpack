@@ -285,7 +285,7 @@ ServerEvents.recipes(event => {
 		R: F('#rods/iron')
 	})
 
-	event.recipes.mechanicalCrafting(KJS('gun_barrel_advanced'), [
+	event.recipes.createMechanicalCrafting(KJS('gun_barrel_advanced'), [
 		'SSRRB'
 	], {
 		S: F('#ingots/steel'),
@@ -362,19 +362,21 @@ ServerEvents.recipes(event => {
 
 	//#region Testing
 
-	pbCentrifuge(event, pbNbtItem('test', 'comb'), [
+	pbCentrifuge(event, pbNbtItem(KJS('test'), 'comb'), [
 		honey(100),
 		itemChance(F('#wax'), 0.5),
 		itemChance(CA('festive_spool'), 0.05)
 	])
 
-	event.recipes.createMixing([pbNbtItem('test', 'comb')], [
+	event.recipes.createMixing([
 		honey(50),
-		itemChance(F('#wax'), 0.3),
-		itemChance(CA('festive_spool'), 0.01)
+		Item.of(F('#wax')).withChance(0.3),
+		Item.of(CA('festive_spool')).withChance(0.01)
+	], [
+		pbNbtItem(KJS('test'), 'comb')
 	]).heated()
 
-	pbBeeProduce(event, 'test', [pbNbtItem('test', 'comb')])
+	pbBeeProduce(event, KJS('test'), [pbNbtItem(KJS('test'), 'comb')])
 
 	//#endregion
 
@@ -530,7 +532,10 @@ function pbRegisterBee(event, name, json){
 	event.addJson(KJS(`productivebees/${name}`), json)
 }
 
-function pbNbtItem(entity, item_type){
+function pbNbtItem(entity, item_type, amount){
+
+	amount = amount ? amount : 1
+
 	switch(item_type){
 		case 'honeycomb':
 		case 'comb':
@@ -538,15 +543,9 @@ function pbNbtItem(entity, item_type){
 			item_type = 'configurable_honeycomb'
 			break
 	}
-	return {
-		type: F('nbt'),
-		item: PB(item_type),
-		nbt: {
-			EntityTag: {
-				type: PB(entity)
-			}
-		}
-	}
+
+	return Item.of((item_type), amount, '{EntityTag:{type:"kubejs:test"}}')
+
 }
 
 //#endregion
