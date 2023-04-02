@@ -17,9 +17,7 @@
 *.bak
 /.mcattributes
 /journeymap/icon/
-minecraftinstance.json
 /config/spark/
 *.hprof
-/kubejs/assets/kubejs/textures
 rhino.local.properties
 *.mp4

@@ -21,13 +21,9 @@ let CA = (item, amount, chance) => MOD('createaddition', item, amount, chance)
 let CBC = (item, amount, chance) => MOD('createbigcannons', item, amount, chance)
 let POTR = (item, amount, chance) => MOD('adpother', item, amount, chance)
 let AC = (item, amount, chance) => MOD('adchimneys', item, amount, chance)
-let PB = (item, amount, chance) => MOD('productivebees', item, amount, chance)
 //#endregion
 
 let cgmGuns = [CGM('pistol'), CGM('rifle'), CGM('shotgun'), CGM('heavy_rifle'), CGM('assault_rifle'), CGM('machine_pistol'), CGM('mini_gun'), CGM('bazooka'), CGM('grenade_launcher')]
-let honey = (amount) => amount ? Fluid.of(C('honey'), amount) : Fluid.of(C('honey'))
-
-let itemChance = (item, chance) => Item.of(item).withChance(chance).toJson()
 
 let path = (location) => location.replace(/:/g, '/')
 
@@ -335,50 +331,6 @@ ServerEvents.recipes(event => {
 
 	//#endregion
 
-	//#region Productive bees recipes
-
-	//#region Compat
-
-	event.remove({mod: 'productivebees', type: C('mixing')})
-	event.remove({mod: 'productivebees', type: PB('centrifuge')})
-	event.remove({output: PB('milk_bottle')})
-
-	event.replaceInput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
-	event.replaceInput({}, Fluid.of(PB('flowing_honey')), Fluid.of(C('honey')))
-	event.replaceOutput({}, Fluid.of(PB('honey')), Fluid.of(C('honey')))
-
-	event.replaceInput({}, PB('honey_bucket'), C('honey_bucket'))
-	event.replaceOutput({}, PB('honey_bucket'), C('honey_bucket'))
-
-	//#endregion
-
-	//#region Upgrade removal
-
-	let pbUpgrades = ['anti_teleport', 'base', 'bee_sampler', 'breeding', 'comb_block', 'filter', 'not_babee', 'productivity', 'range', 'simulator', 'time']
-	pbUpgrades.forEach(upgrade => {
-		event.remove({output: PB(`upgrade_${upgrade}`)})
-	})
-
-	//#endregion
-
-	//#region Testing
-
-	event.recipes.createMixing([
-		honey(50),
-		Item.of(F('#wax')).withChance(0.3),
-		Item.of(CA('festive_spool')).withChance(0.01)
-	], [
-		pbNbtItem(KJS('test'), 'comb', 1, true)
-	]).heated()
-
-	pbBeeProduce(event, KJS('test'), [
-		pbNbtItem(KJS('test'), 'comb', 1, true)
-	])
-
-	//#endregion
-
-	//#endregion
-
 })
 
 ServerEvents.tags('item', event => {
@@ -387,26 +339,11 @@ ServerEvents.tags('item', event => {
 
 	event.remove(F('plates'), CA('zinc_sheet'))
 
-	event.removeAllTagsFrom(PB('milk_bottle'))
-	event.get(F('bottles/milk')).add(PB('milk_bottle')).add(FD('milk_bottle'))
-
 	//#endregion
 
 	//#region Custom item tags
 	event.get(F('filter_base_materials')).add(MC('paper')).add(FD('canvas'))
 	//#endregion
-
-})
-
-ServerEvents.highPriorityData(event => {
-	
-	pbRegisterBee(event, 'test', {
-		primaryColor: '#AAFF00',
-		secondaryColor: '#EE4B2B',
-		particleColor: '#ffffff',
-		flowerBlock: CA('connector'),
-		size: 1.0
-	})
 
 })
 
@@ -481,87 +418,6 @@ function fdCookingContainer(event, result, materials, xp, cookingTime, container
 		cookingtime: cookingTime,
 		container: Item.of(container).toJson()
 	})}
-
-//#endregion
-
-//#region Productive Bees compat
-
-function pbBeeBreeding(event, parent1, parent2, results){
-	event.custom({
-		type: PB('bee_breeding'),
-		parent1: parent1,
-		parent2: parent2,
-		offspring: results
-	})}
-
-function pbBeeConversion(event, parent, result, item){
-	event.custom({
-		type: PB('bee_conversion'),
-		source: parent,
-		result: result,
-		item: Item.of(item).toJson()
-	})}
-
-function pbBeeProduce(event, bee, results){
-	event.custom({
-		type: PB('advanced_beehive'),
-		ingredient: bee,
-		results: formatMaterials(results)
-	})}
-
-function pbCentrifuge(event, item, outputs){
-	event.custom({
-		type: PB('centrifuge'),
-		ingredient: item,
-		outputs: formatMaterials(outputs)
-	})}
-
-function pbBlockConversion(event, bee, block, result, chance){
-	event.custom({
-		type: PB('block_conversion'),
-		bee: bee,
-		chance: chance ? chance * 100 : 100, // Chance input is a decimal, but the json expects a percentage
-		from: {Name: block},
-		to: {Name: result}
-	})}
-
-function pbRegisterBee(event, name, json){
-	event.addJson(KJS(`productivebees/${name}`), json)
-}
-
-function pbNbtItem(entity, item_type, amount, create){
-
-	amount = amount ? amount : 1
-
-	create = create ? create : true
-
-	switch(item_type){
-		case 'honeycomb':
-		case 'comb':
-		case 'c':
-			item_type = PB('configurable_honeycomb')
-			break
-	}
-
-	if (create){
-		return {
-			type: F('nbt'),
-			item: item_type,
-			nbt: `{EntityTag:{type:"${entity}"}}`
-		}
-	} else {
-		return {
-			item: {
-				type: F('nbt'),
-				item: item_type,
-				nbt: `{EntityTag:{type:"${entity}"}}`
-			}
-		}
-	}
-
-	//return Item.of((item_type), amount, `{EntityTag:{type:"${entity}"}}`)
-
-}
 
 //#endregion
 
