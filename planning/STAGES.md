@@ -64,4 +64,52 @@ Player should automate andesite alloy and start using it to make brass. Give the
 - Advanced andesite machines
 - Brass tools and items
 - Raids ramp up in difficulty even more
-- Autmation is a necessity for getting through the stage
+- Automation is a necessity for getting through the stage
+
+## Stage 4.0: (NN) (TBD) Steel
+
+### Notes
+
+Player should make steel and start using it to make steel tools and items. Give the player access to even more advanced machines and teach them how to use them.
+
+Method A to make steel:
+- Put iron in a blast furnace to get reduced iron
+- The reduced iron should be mixed with coal to make impure steel
+- The impure steel should be put in a superheated mixer to make liquid steel
+
+Method B to make steel:
+- Put iron nuggets in a blast furnace to get reduced iron pellets
+- Mix the reduced iron pellets with steel nuggets in a superheated mixer to make liquid steel
+
+### Goals
+
+- Automate brass
+- Automate steel
+- Use steel to mine (TBD) ancient debris (ends stage)
+
+### Content
+
+- Advanced brass machines
+- Raids are at insane difficulty
+- Advanced atmosphere cleaning
+
+## Stage 5.0: (NN) (TBD) Nethersteel and Netherite
+
+### Notes
+
+Player can make nether steel by treating netherite scrap with steel. Netherite is now available via aggresive treatment and automation.
+
+Player will need bug parts from leafcutter ants to acquire and automate nethersteel.
+
+### Goals
+
+- Automate nethersteel
+- Acquire netherite
+- Kill the Ender Dragon (ends stage)
+
+### Content
+
+- Advanced nethersteel machinery
+- Power is unlocked
+- Leafcutter ant farms
+- The End is now available
