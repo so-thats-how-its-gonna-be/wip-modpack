@@ -1,0 +1,188 @@
+{
+  "version": "0.8.0-alpha.8.1",
+  "pan": {
+    "X": -327.36,
+    "Y": 35.519897
+  },
+  "zoom": 1,
+  "currentPage": 0,
+  "properties": {
+    "CacheDirectory": ""
+  },
+  "pages": [
+    {
+      "id": 0,
+      "pan": {
+        "X": -327.36005,
+        "Y": 35.519905
+      },
+      "zoom": 1,
+      "cards": [
+        {
+          "id": 0,
+          "rect": {
+            "X": -352,
+            "Y": -160,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Modpack",
+            "filepath": ""
+          },
+          "links": [
+            {
+              "start": 0,
+              "end": 2,
+              "joints": []
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "rect": {
+            "X": -608,
+            "Y": 0,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Automationation"
+          },
+          "links": [
+            {
+              "start": 2,
+              "end": 5,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "rect": {
+            "X": -256,
+            "Y": 0,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Guns"
+          }
+        },
+        {
+          "id": 5,
+          "rect": {
+            "X": -544,
+            "Y": 128,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Materials"
+          },
+          "links": [
+            {
+              "start": 5,
+              "end": 8,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "rect": {
+            "X": -864,
+            "Y": 256,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Metal"
+          }
+        },
+        {
+          "id": 7,
+          "rect": {
+            "X": -832,
+            "Y": 288,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Iron"
+          }
+        },
+        {
+          "id": 6,
+          "rect": {
+            "X": -832,
+            "Y": 320,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Gold"
+          }
+        },
+        {
+          "id": 9,
+          "rect": {
+            "X": -832,
+            "Y": 352,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedShade",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Copper"
+          }
+        }
+      ]
+    }
+  ],
+  "savedimages": {}
+}
