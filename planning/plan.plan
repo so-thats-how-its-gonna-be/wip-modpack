@@ -1,10 +1,10 @@
 {
   "version": "0.8.0-alpha.8.1",
   "pan": {
-    "X": -327.36,
-    "Y": 35.519897
+    "X": -556.3959,
+    "Y": 385.31412
   },
-  "zoom": 1,
+  "zoom": 1.2100000381469727,
   "currentPage": 0,
   "properties": {
     "CacheDirectory": ""
@@ -13,10 +13,10 @@
     {
       "id": 0,
       "pan": {
-        "X": -327.36005,
-        "Y": 35.519905
+        "X": -556.39575,
+        "Y": 385.31406
       },
-      "zoom": 1,
+      "zoom": 1.2100000381469727,
       "cards": [
         {
           "id": 0,
@@ -38,18 +38,18 @@
           "links": [
             {
               "start": 0,
-              "end": 2,
+              "end": 1,
               "joints": []
             },
             {
               "start": 0,
-              "end": 3,
+              "end": 2,
               "joints": []
             }
           ]
         },
         {
-          "id": 2,
+          "id": 1,
           "rect": {
             "X": -608,
             "Y": 0,
@@ -62,18 +62,23 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Automationation"
+            "description": "Automation"
           },
           "links": [
             {
-              "start": 2,
-              "end": 5,
+              "start": 1,
+              "end": 4,
+              "joints": []
+            },
+            {
+              "start": 1,
+              "end": 8,
               "joints": []
             }
           ]
         },
         {
-          "id": 3,
+          "id": 2,
           "rect": {
             "X": -256,
             "Y": 0,
@@ -90,31 +95,7 @@
           }
         },
         {
-          "id": 5,
-          "rect": {
-            "X": -544,
-            "Y": 128,
-            "W": 288,
-            "H": 32
-          },
-          "collapsed": "CollapsedNone",
-          "uncollapsedSizeX": 288,
-          "uncollapsedSizeY": 32,
-          "contents": "Checkbox",
-          "properties": {
-            "checked": false,
-            "description": "Materials"
-          },
-          "links": [
-            {
-              "start": 5,
-              "end": 8,
-              "joints": []
-            }
-          ]
-        },
-        {
-          "id": 8,
+          "id": 4,
           "rect": {
             "X": -864,
             "Y": 256,
@@ -131,7 +112,24 @@
           }
         },
         {
-          "id": 7,
+          "id": 8,
+          "rect": {
+            "X": -480,
+            "Y": 256,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Create"
+          }
+        },
+        {
+          "id": 5,
           "rect": {
             "X": -832,
             "Y": 288,
@@ -145,6 +143,23 @@
           "properties": {
             "checked": false,
             "description": "Iron"
+          }
+        },
+        {
+          "id": 9,
+          "rect": {
+            "X": -448,
+            "Y": 288,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Andesite Alloy"
           }
         },
         {
@@ -165,7 +180,7 @@
           }
         },
         {
-          "id": 9,
+          "id": 7,
           "rect": {
             "X": -832,
             "Y": 352,
@@ -179,6 +194,57 @@
           "properties": {
             "checked": false,
             "description": "Copper"
+          }
+        },
+        {
+          "id": 15,
+          "rect": {
+            "X": -832,
+            "Y": 384,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedShade",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Brass"
+          }
+        },
+        {
+          "id": 16,
+          "rect": {
+            "X": -832,
+            "Y": 416,
+            "W": 256,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 256,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Steel"
+          }
+        },
+        {
+          "id": 17,
+          "rect": {
+            "X": -832,
+            "Y": 448,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Nethersteel"
           }
         }
       ]
