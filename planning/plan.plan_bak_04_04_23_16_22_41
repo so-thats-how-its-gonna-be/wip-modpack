@@ -62,8 +62,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Automation",
-            "filepath": ""
+            "description": "Automation"
           },
           "links": [
             {
@@ -92,8 +91,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Guns",
-            "filepath": ""
+            "description": "Guns"
           }
         },
         {
@@ -110,8 +108,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Metal",
-            "filepath": ""
+            "description": "Metal"
           }
         },
         {
@@ -128,8 +125,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Create",
-            "filepath": ""
+            "description": "Create"
           }
         },
         {
@@ -146,8 +142,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Iron",
-            "filepath": ""
+            "description": "Iron"
           }
         },
         {
@@ -164,8 +159,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Andesite Alloy",
-            "filepath": ""
+            "description": "Andesite Alloy"
           }
         },
         {
@@ -182,8 +176,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Gold",
-            "filepath": ""
+            "description": "Gold"
           }
         },
         {
@@ -200,8 +193,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Copper",
-            "filepath": ""
+            "description": "Copper"
           }
         },
         {
@@ -218,8 +210,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Brass",
-            "filepath": ""
+            "description": "Brass"
           }
         },
         {
@@ -236,8 +227,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Steel",
-            "filepath": ""
+            "description": "Steel"
           }
         },
         {
@@ -254,8 +244,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Nethersteel",
-            "filepath": ""
+            "description": "Nethersteel"
           }
         }
       ]
