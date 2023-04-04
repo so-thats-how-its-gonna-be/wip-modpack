@@ -21,3 +21,4 @@
 *.hprof
 rhino.local.properties
 *.mp4
+*.plan_*
