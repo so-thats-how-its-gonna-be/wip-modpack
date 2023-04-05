@@ -1,10 +1,10 @@
 {
   "version": "0.8.0-alpha.8.1",
   "pan": {
-    "X": -273.0342,
-    "Y": 307.69388
+    "X": 209.71443,
+    "Y": 268.87048
   },
-  "zoom": 0.9723559617996216,
+  "zoom": 0.9176787734031677,
   "currentPage": 0,
   "properties": {
     "CacheDirectory": ""
@@ -13,10 +13,10 @@
     {
       "id": 0,
       "pan": {
-        "X": -273.03415,
-        "Y": 307.69382
+        "X": 209.7144,
+        "Y": 268.87042
       },
-      "zoom": 0.9723559617996216,
+      "zoom": 0.9176787734031677,
       "cards": [
         {
           "id": 0,
@@ -75,6 +75,16 @@
               "start": 1,
               "end": 4,
               "joints": []
+            },
+            {
+              "start": 1,
+              "end": 13,
+              "joints": []
+            },
+            {
+              "start": 1,
+              "end": 14,
+              "joints": []
             }
           ]
         },
@@ -94,6 +104,198 @@
             "checked": false,
             "description": "Guns",
             "filepath": ""
+          },
+          "links": [
+            {
+              "start": 2,
+              "end": 12,
+              "joints": []
+            },
+            {
+              "start": 2,
+              "end": 22,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "rect": {
+            "X": 288,
+            "Y": 64,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Crafting"
+          }
+        },
+        {
+          "id": 12,
+          "rect": {
+            "X": -96,
+            "Y": 96,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Manufacturing"
+          }
+        },
+        {
+          "id": 23,
+          "rect": {
+            "X": 320,
+            "Y": 96,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedShade",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Pistol"
+          },
+          "links": [
+            {
+              "start": 23,
+              "end": 15,
+              "joints": []
+            },
+            {
+              "start": 23,
+              "end": 16,
+              "joints": []
+            },
+            {
+              "start": 23,
+              "end": 17,
+              "joints": []
+            },
+            {
+              "start": 23,
+              "end": 18,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "rect": {
+            "X": -64,
+            "Y": 128,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Basic"
+          }
+        },
+        {
+          "id": 24,
+          "rect": {
+            "X": 320,
+            "Y": 128,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Shotgun"
+          },
+          "links": [
+            {
+              "start": 24,
+              "end": 15,
+              "joints": []
+            },
+            {
+              "start": 24,
+              "end": 16,
+              "joints": []
+            },
+            {
+              "start": 24,
+              "end": 17,
+              "joints": []
+            },
+            {
+              "start": 24,
+              "end": 18,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "rect": {
+            "X": -32,
+            "Y": 160,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Legal gun parts"
+          }
+        },
+        {
+          "id": 16,
+          "rect": {
+            "X": -32,
+            "Y": 192,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Gun handle"
+          }
+        },
+        {
+          "id": 17,
+          "rect": {
+            "X": -32,
+            "Y": 224,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Basic gun barrel"
           }
         },
         {
@@ -133,6 +335,23 @@
           }
         },
         {
+          "id": 18,
+          "rect": {
+            "X": -32,
+            "Y": 256,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Basic gun chamber"
+          }
+        },
+        {
           "id": 5,
           "rect": {
             "X": -832,
@@ -169,6 +388,23 @@
           }
         },
         {
+          "id": 14,
+          "rect": {
+            "X": -64,
+            "Y": 288,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Advanced"
+          }
+        },
+        {
           "id": 7,
           "rect": {
             "X": -832,
@@ -184,6 +420,23 @@
             "checked": false,
             "description": "Gold",
             "filepath": ""
+          }
+        },
+        {
+          "id": 19,
+          "rect": {
+            "X": -32,
+            "Y": 320,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedShade",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Illegal gun parts"
           }
         },
         {
@@ -205,6 +458,23 @@
           }
         },
         {
+          "id": 20,
+          "rect": {
+            "X": -32,
+            "Y": 352,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Advanced gun barrel"
+          }
+        },
+        {
           "id": 9,
           "rect": {
             "X": -832,
@@ -220,6 +490,23 @@
             "checked": false,
             "description": "Brass",
             "filepath": ""
+          }
+        },
+        {
+          "id": 21,
+          "rect": {
+            "X": -32,
+            "Y": 384,
+            "W": 288,
+            "H": 64
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 64,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Rotating gun chamber"
           }
         },
         {
