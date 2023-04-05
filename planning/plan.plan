@@ -1,10 +1,10 @@
 {
   "version": "0.8.0-alpha.8.1",
   "pan": {
-    "X": 209.71443,
-    "Y": 268.87048
+    "X": -245.7659,
+    "Y": 741.06134
   },
-  "zoom": 0.9176787734031677,
+  "zoom": 0.8208835124969482,
   "currentPage": 0,
   "properties": {
     "CacheDirectory": ""
@@ -13,10 +13,10 @@
     {
       "id": 0,
       "pan": {
-        "X": 209.7144,
-        "Y": 268.87042
+        "X": -245.76593,
+        "Y": 741.0612
       },
-      "zoom": 0.9176787734031677,
+      "zoom": 0.8208835124969482,
       "cards": [
         {
           "id": 0,
@@ -68,22 +68,37 @@
           "links": [
             {
               "start": 1,
-              "end": 3,
+              "end": 11,
               "joints": []
             },
             {
               "start": 1,
-              "end": 4,
+              "end": 12,
               "joints": []
             },
             {
               "start": 1,
-              "end": 13,
+              "end": 6,
               "joints": []
             },
             {
               "start": 1,
-              "end": 14,
+              "end": 16,
+              "joints": []
+            },
+            {
+              "start": 1,
+              "end": 35,
+              "joints": []
+            },
+            {
+              "start": 1,
+              "end": 40,
+              "joints": []
+            },
+            {
+              "start": 1,
+              "end": 43,
               "joints": []
             }
           ]
@@ -91,7 +106,7 @@
         {
           "id": 2,
           "rect": {
-            "X": -256,
+            "X": -288,
             "Y": 0,
             "W": 288,
             "H": 32
@@ -108,20 +123,53 @@
           "links": [
             {
               "start": 2,
-              "end": 12,
+              "end": 4,
               "joints": []
             },
             {
               "start": 2,
-              "end": 22,
+              "end": 3,
+              "joints": []
+            },
+            {
+              "start": 2,
+              "end": 35,
+              "joints": []
+            },
+            {
+              "start": 2,
+              "end": 40,
+              "joints": []
+            },
+            {
+              "start": 2,
+              "end": 43,
               "joints": []
             }
           ]
         },
         {
-          "id": 22,
+          "id": 40,
           "rect": {
-            "X": 288,
+            "X": 896,
+            "Y": 32,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Throwables",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 41,
+          "rect": {
+            "X": 928,
             "Y": 64,
             "W": 288,
             "H": 32
@@ -132,11 +180,12 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Crafting"
+            "description": "Grenade",
+            "filepath": ""
           }
         },
         {
-          "id": 12,
+          "id": 4,
           "rect": {
             "X": -96,
             "Y": 96,
@@ -149,50 +198,48 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Manufacturing"
+            "description": "Manufacturing",
+            "filepath": ""
           }
         },
         {
-          "id": 23,
+          "id": 3,
           "rect": {
-            "X": 320,
+            "X": 448,
             "Y": 96,
             "W": 288,
             "H": 32
           },
-          "collapsed": "CollapsedShade",
+          "collapsed": "CollapsedNone",
           "uncollapsedSizeX": 288,
           "uncollapsedSizeY": 32,
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Pistol"
-          },
-          "links": [
-            {
-              "start": 23,
-              "end": 15,
-              "joints": []
-            },
-            {
-              "start": 23,
-              "end": 16,
-              "joints": []
-            },
-            {
-              "start": 23,
-              "end": 17,
-              "joints": []
-            },
-            {
-              "start": 23,
-              "end": 18,
-              "joints": []
-            }
-          ]
+            "description": "Crafting",
+            "filepath": ""
+          }
         },
         {
-          "id": 13,
+          "id": 42,
+          "rect": {
+            "X": 928,
+            "Y": 96,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Stun grenade",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 6,
           "rect": {
             "X": -64,
             "Y": 128,
@@ -205,50 +252,52 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Basic"
+            "description": "Basic",
+            "filepath": ""
           }
         },
         {
-          "id": 24,
+          "id": 5,
           "rect": {
-            "X": 320,
+            "X": 480,
             "Y": 128,
             "W": 288,
             "H": 32
           },
-          "collapsed": "CollapsedNone",
+          "collapsed": "CollapsedShade",
           "uncollapsedSizeX": 288,
           "uncollapsedSizeY": 32,
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Shotgun"
+            "description": "Pistol",
+            "filepath": ""
           },
           "links": [
             {
-              "start": 24,
-              "end": 15,
+              "start": 5,
+              "end": 8,
               "joints": []
             },
             {
-              "start": 24,
-              "end": 16,
+              "start": 5,
+              "end": 9,
               "joints": []
             },
             {
-              "start": 24,
-              "end": 17,
+              "start": 5,
+              "end": 10,
               "joints": []
             },
             {
-              "start": 24,
-              "end": 18,
+              "start": 5,
+              "end": 13,
               "joints": []
             }
           ]
         },
         {
-          "id": 15,
+          "id": 8,
           "rect": {
             "X": -32,
             "Y": 160,
@@ -261,11 +310,52 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Legal gun parts"
+            "description": "Legal gun parts",
+            "filepath": ""
           }
         },
         {
-          "id": 16,
+          "id": 7,
+          "rect": {
+            "X": 480,
+            "Y": 160,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Shotgun",
+            "filepath": ""
+          },
+          "links": [
+            {
+              "start": 7,
+              "end": 8,
+              "joints": []
+            },
+            {
+              "start": 7,
+              "end": 9,
+              "joints": []
+            },
+            {
+              "start": 7,
+              "end": 10,
+              "joints": []
+            },
+            {
+              "start": 7,
+              "end": 13,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 9,
           "rect": {
             "X": -32,
             "Y": 192,
@@ -278,14 +368,15 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Gun handle"
+            "description": "Gun handle",
+            "filepath": ""
           }
         },
         {
-          "id": 17,
+          "id": 26,
           "rect": {
-            "X": -32,
-            "Y": 224,
+            "X": 480,
+            "Y": 192,
             "W": 288,
             "H": 32
           },
@@ -295,14 +386,37 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Basic gun barrel"
-          }
+            "description": "Rifle",
+            "filepath": ""
+          },
+          "links": [
+            {
+              "start": 26,
+              "end": 8,
+              "joints": []
+            },
+            {
+              "start": 26,
+              "end": 9,
+              "joints": []
+            },
+            {
+              "start": 26,
+              "end": 10,
+              "joints": []
+            },
+            {
+              "start": 26,
+              "end": 13,
+              "joints": []
+            }
+          ]
         },
         {
-          "id": 3,
+          "id": 11,
           "rect": {
-            "X": -864,
-            "Y": 256,
+            "X": -1152,
+            "Y": 224,
             "W": 288,
             "H": 32
           },
@@ -317,10 +431,10 @@
           }
         },
         {
-          "id": 4,
+          "id": 12,
           "rect": {
-            "X": -480,
-            "Y": 256,
+            "X": -768,
+            "Y": 224,
             "W": 288,
             "H": 32
           },
@@ -335,10 +449,10 @@
           }
         },
         {
-          "id": 18,
+          "id": 10,
           "rect": {
             "X": -32,
-            "Y": 256,
+            "Y": 224,
             "W": 288,
             "H": 32
           },
@@ -348,14 +462,55 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Basic gun chamber"
+            "description": "Basic gun barrel",
+            "filepath": ""
           }
         },
         {
-          "id": 5,
+          "id": 27,
           "rect": {
-            "X": -832,
-            "Y": 288,
+            "X": 480,
+            "Y": 224,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Machine pistol",
+            "filepath": ""
+          },
+          "links": [
+            {
+              "start": 27,
+              "end": 8,
+              "joints": []
+            },
+            {
+              "start": 27,
+              "end": 9,
+              "joints": []
+            },
+            {
+              "start": 27,
+              "end": 10,
+              "joints": []
+            },
+            {
+              "start": 27,
+              "end": 13,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "rect": {
+            "X": -1120,
+            "Y": 256,
             "W": 288,
             "H": 32
           },
@@ -370,10 +525,10 @@
           }
         },
         {
-          "id": 6,
+          "id": 15,
           "rect": {
-            "X": -448,
-            "Y": 288,
+            "X": -736,
+            "Y": 256,
             "W": 288,
             "H": 32
           },
@@ -388,10 +543,10 @@
           }
         },
         {
-          "id": 14,
+          "id": 13,
           "rect": {
-            "X": -64,
-            "Y": 288,
+            "X": -32,
+            "Y": 256,
             "W": 288,
             "H": 32
           },
@@ -401,14 +556,55 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Advanced"
+            "description": "Basic gun chamber",
+            "filepath": ""
           }
         },
         {
-          "id": 7,
+          "id": 28,
           "rect": {
-            "X": -832,
-            "Y": 320,
+            "X": 480,
+            "Y": 256,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Heavy rifle",
+            "filepath": ""
+          },
+          "links": [
+            {
+              "start": 28,
+              "end": 9,
+              "joints": []
+            },
+            {
+              "start": 28,
+              "end": 20,
+              "joints": []
+            },
+            {
+              "start": 28,
+              "end": 18,
+              "joints": []
+            },
+            {
+              "start": 28,
+              "end": 13,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "rect": {
+            "X": -1120,
+            "Y": 288,
             "W": 288,
             "H": 32
           },
@@ -423,7 +619,83 @@
           }
         },
         {
+          "id": 16,
+          "rect": {
+            "X": -64,
+            "Y": 288,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Advanced",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 29,
+          "rect": {
+            "X": 480,
+            "Y": 288,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Grenade launcher",
+            "filepath": ""
+          },
+          "links": [
+            {
+              "start": 29,
+              "end": 18,
+              "joints": []
+            },
+            {
+              "start": 29,
+              "end": 22,
+              "joints": []
+            },
+            {
+              "start": 29,
+              "end": 9,
+              "joints": []
+            },
+            {
+              "start": 29,
+              "end": 20,
+              "joints": []
+            }
+          ]
+        },
+        {
           "id": 19,
+          "rect": {
+            "X": -1120,
+            "Y": 320,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedShade",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Copper",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 18,
           "rect": {
             "X": -32,
             "Y": 320,
@@ -436,13 +708,54 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Illegal gun parts"
+            "description": "Illegal gun parts",
+            "filepath": ""
           }
         },
         {
-          "id": 8,
+          "id": 30,
           "rect": {
-            "X": -832,
+            "X": 480,
+            "Y": 320,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Bazooka",
+            "filepath": ""
+          },
+          "links": [
+            {
+              "start": 30,
+              "end": 20,
+              "joints": []
+            },
+            {
+              "start": 30,
+              "end": 18,
+              "joints": []
+            },
+            {
+              "start": 30,
+              "end": 13,
+              "joints": []
+            },
+            {
+              "start": 30,
+              "end": 9,
+              "joints": []
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "rect": {
+            "X": -1120,
             "Y": 352,
             "W": 288,
             "H": 32
@@ -453,7 +766,7 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Copper",
+            "description": "Brass",
             "filepath": ""
           }
         },
@@ -471,49 +784,55 @@
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Advanced gun barrel"
+            "description": "Advanced gun barrel",
+            "filepath": ""
           }
         },
         {
-          "id": 9,
+          "id": 31,
           "rect": {
-            "X": -832,
-            "Y": 384,
+            "X": 480,
+            "Y": 352,
             "W": 288,
             "H": 32
           },
-          "collapsed": "CollapsedShade",
+          "collapsed": "CollapsedNone",
           "uncollapsedSizeX": 288,
           "uncollapsedSizeY": 32,
           "contents": "Checkbox",
           "properties": {
             "checked": false,
-            "description": "Brass",
+            "description": "Minigun",
             "filepath": ""
-          }
-        },
-        {
-          "id": 21,
-          "rect": {
-            "X": -32,
-            "Y": 384,
-            "W": 288,
-            "H": 64
           },
-          "collapsed": "CollapsedNone",
-          "uncollapsedSizeX": 288,
-          "uncollapsedSizeY": 64,
-          "contents": "Checkbox",
-          "properties": {
-            "checked": false,
-            "description": "Rotating gun chamber"
-          }
+          "links": [
+            {
+              "start": 31,
+              "end": 22,
+              "joints": []
+            },
+            {
+              "start": 31,
+              "end": 20,
+              "joints": []
+            },
+            {
+              "start": 31,
+              "end": 18,
+              "joints": []
+            },
+            {
+              "start": 31,
+              "end": 9,
+              "joints": []
+            }
+          ]
         },
         {
-          "id": 10,
+          "id": 23,
           "rect": {
-            "X": -832,
-            "Y": 416,
+            "X": -1120,
+            "Y": 384,
             "W": 288,
             "H": 32
           },
@@ -528,10 +847,28 @@
           }
         },
         {
-          "id": 11,
+          "id": 22,
           "rect": {
-            "X": -832,
-            "Y": 448,
+            "X": -32,
+            "Y": 384,
+            "W": 288,
+            "H": 64
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 64,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Rotating gun chamber",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 24,
+          "rect": {
+            "X": -1120,
+            "Y": 416,
             "W": 288,
             "H": 32
           },
@@ -542,6 +879,181 @@
           "properties": {
             "checked": false,
             "description": "Nethersteel",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 43,
+          "rect": {
+            "X": -576,
+            "Y": 608,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Attachments"
+          }
+        },
+        {
+          "id": 35,
+          "rect": {
+            "X": -224,
+            "Y": 608,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Ammo",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 44,
+          "rect": {
+            "X": -544,
+            "Y": 640,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Stocks"
+          }
+        },
+        {
+          "id": 36,
+          "rect": {
+            "X": -192,
+            "Y": 640,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Basic bullet",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 45,
+          "rect": {
+            "X": -544,
+            "Y": 672,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Grips"
+          }
+        },
+        {
+          "id": 37,
+          "rect": {
+            "X": -192,
+            "Y": 672,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Advanced bullet",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 46,
+          "rect": {
+            "X": -544,
+            "Y": 704,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Barrel attachments"
+          }
+        },
+        {
+          "id": 38,
+          "rect": {
+            "X": -192,
+            "Y": 704,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Shell",
+            "filepath": ""
+          }
+        },
+        {
+          "id": 47,
+          "rect": {
+            "X": -544,
+            "Y": 736,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Scopes"
+          }
+        },
+        {
+          "id": 39,
+          "rect": {
+            "X": -192,
+            "Y": 736,
+            "W": 288,
+            "H": 32
+          },
+          "collapsed": "CollapsedNone",
+          "uncollapsedSizeX": 288,
+          "uncollapsedSizeY": 32,
+          "contents": "Checkbox",
+          "properties": {
+            "checked": false,
+            "description": "Rocket",
             "filepath": ""
           }
         }
